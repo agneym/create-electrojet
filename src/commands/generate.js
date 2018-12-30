@@ -1,5 +1,6 @@
 module.exports = {
   name: 'create',
+  description: 'Create new electron project',
   alias: ['g', 'new', 'n', 'generate', 'c'],
   run: async toolbox => {
     const {
