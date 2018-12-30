@@ -3,5 +3,5 @@
 ## Usage
 
 ```
-npm init electrojet new name
+npm init electrojet name
 ```

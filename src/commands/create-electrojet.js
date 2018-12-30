@@ -1,8 +1,31 @@
 module.exports = {
-  name: 'electrojet',
+  name: 'create-electrojet',
+  description: 'Create new electron project',
+  alias: ['g', 'new', 'n', 'generate', 'c', 'create'],
   run: async toolbox => {
-    const { print } = toolbox
+    const {
+      parameters,
+      print: { info, success },
+      validateName,
+      installPackages,
+      copyFiles,
+    } = toolbox;
 
-    print.info('Welcome to your CLI')
+    const name = parameters.first;
+
+    const props = {
+      name
+    }
+
+    if (!validateName(name)) {
+      return;
+    }
+
+    await copyFiles(name);
+
+    await installPackages(props);
+
+    success(`Generated project under ${props.name}`);
+    info(`Next Steps:\n  1. cd ${props.name}\n  2. npm start`);
   }
 }
