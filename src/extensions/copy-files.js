@@ -1,13 +1,11 @@
-const copy = require('recursive-copy');
-
 module.exports = toolbox => {
   async function copyFiles(name) {
     const {
-      filesystem,
+      filesystem: { copy, dir, },
       template: { generate },
     } = toolbox;
 
-    await filesystem.dir(name);
+    await dir(name);
 
     const files = [
       'package.json.ejs',
@@ -24,7 +22,9 @@ module.exports = toolbox => {
 
     await Promise.all(configFiles);
 
-    return copy('src/templates/source', `${name}/`);
+    return copy('src/templates/source', `${name}/`, {
+      overwrite: true,
+    });
   }
 
   toolbox.copyFiles = copyFiles;
