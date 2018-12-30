@@ -14,14 +14,11 @@
     "coverage": "jest --coverage"
   },
   "files": [
-    "LICENSE",
-    "README.md",
     "bin",
     "src"
   ],
   "license": "MIT",
   "dependencies": {
-    "app-root-path": "^2.1.0",
     "gluegun": "next"
   },
   "devDependencies": {
@@ -49,5 +46,12 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoyWithSilverWings/create-electrojet"
+  },
+  "bugs": {
+    "url": "https://github.com/BoyWithSilverWings/create-electrojet/issues"
   }
 }
