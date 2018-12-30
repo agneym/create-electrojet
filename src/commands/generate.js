@@ -5,7 +5,7 @@ module.exports = {
   run: async toolbox => {
     const {
       parameters,
-      print: { success },
+      print: { info, success },
       validateName,
       installPackages,
       copyFiles,
@@ -26,5 +26,6 @@ module.exports = {
     await installPackages(props);
 
     success(`Generated project under ${props.name}`);
+    info(`Next Steps:\n  1. cd ${props.name}\n  2. npm start`);
   }
 }
