@@ -1,8 +1,7 @@
-# electrojet-cli CLI
+# Electrojet 
 
-A CLI for electrojet-cli.
+## Usage
 
-# License
-
-MIT - see LICENSE
-
+```
+npm init electrojet new name
+```
