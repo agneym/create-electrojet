@@ -1,3 +1,5 @@
+const appRoot = require('app-root-path');
+
 module.exports = toolbox => {
   async function copyFiles(name) {
     const {
@@ -22,7 +24,7 @@ module.exports = toolbox => {
 
     await Promise.all(configFiles);
 
-    return copy('src/templates/source', `${name}/`, {
+    return copy(appRoot + '/src/templates/source', `${name}/`, {
       overwrite: true,
     });
   }
