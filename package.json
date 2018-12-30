@@ -1,10 +1,10 @@
 {
-  "name": "electrojet-cli",
+  "name": "electrojet",
   "version": "0.0.1",
   "description": "Electrojet CLI",
   "private": true,
   "bin": {
-    "electrojet-cli": "bin/electrojet-cli"
+    "electrojet": "bin/electrojet"
   },
   "scripts": {
     "format": "prettier --write **/*.{js,json} && standard --fix",

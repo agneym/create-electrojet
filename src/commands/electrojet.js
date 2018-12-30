@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'electrojet-cli',
+  name: 'electrojet',
   run: async toolbox => {
     const { print } = toolbox
 
