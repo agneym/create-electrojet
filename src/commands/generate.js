@@ -5,13 +5,17 @@ module.exports = {
   run: async toolbox => {
     const {
       parameters,
-      template: { generate },
-      print: { info },
+      print: { success },
       validateName,
+      installPackages,
       copyFiles,
-    } = toolbox
+    } = toolbox;
 
     const name = parameters.first;
+
+    const props = {
+      name
+    }
 
     if (!validateName(name)) {
       return
@@ -19,6 +23,8 @@ module.exports = {
 
     await copyFiles(name);
 
-    info(`Generated file at models/${name}-model.js`)
+    await installPackages(props);
+
+    success(`Generated project under ${props.name}`);
   }
 }
