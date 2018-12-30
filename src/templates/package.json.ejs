@@ -4,7 +4,7 @@
   "description": "<%= props.name %> Electron App",
   "main": "index.js",
   "scripts": {
-    "start": "run-p webpack-serve electron-wait",
+    "start": "electrojet-scripts start",
     "webpack-dev": "webpack --mode development",
     "webpack-build": "webpack --mode production",
     "webpack-serve": "webpack-dev-server --mode development --port 4567",
@@ -22,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^4.0.0",
+    "electrojet-scripts": "0.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
