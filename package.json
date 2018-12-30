@@ -1,10 +1,9 @@
 {
   "name": "create-electrojet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Electrojet CLI",
-  "private": true,
   "bin": {
-    "electrojet": "bin/electrojet"
+    "create-electrojet": "bin/create-electrojet"
   },
   "scripts": {
     "format": "prettier --write **/*.{js,json} && standard --fix",
