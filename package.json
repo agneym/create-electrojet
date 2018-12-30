@@ -23,7 +23,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "gluegun": "next"
+    "gluegun": "next",
+    "recursive-copy": "^2.0.9"
   },
   "devDependencies": {
     "husky": "^1.3.1",

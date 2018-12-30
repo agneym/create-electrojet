@@ -8,6 +8,7 @@ module.exports = {
       template: { generate },
       print: { info },
       validateName,
+      copyFiles,
     } = toolbox
 
     const name = parameters.first;
@@ -16,13 +17,7 @@ module.exports = {
       return
     }
 
-    await filesystem.dir(props.name)
-
-    await generate({
-      template: 'model.js.ejs',
-      target: `models/${name}-model.js`,
-      props: { name }
-    })
+    await copyFiles(name);
 
     info(`Generated file at models/${name}-model.js`)
   }
