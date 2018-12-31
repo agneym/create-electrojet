@@ -4,7 +4,7 @@ const { resolve } = require('path')
 const src = resolve(__dirname, '..')
 
 const cli = async cmd =>
-  system.run('node ' + resolve(src, 'bin', 'electrojet-cli') + ` ${cmd}`)
+  system.run('node ' + resolve(src, 'bin', 'create-electrojet') + ` ${cmd}`)
 
 test('outputs version', async () => {
   const output = await cli('--version')
