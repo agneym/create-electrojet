@@ -1,6 +1,6 @@
 const path = require('path')
 const { app, BrowserWindow } = require('electron')
-const isDevelopment = process.env.NODE_ENV === 'development'
+const isProduction = process.env.NODE_ENV === 'production'
 let mainWindow
 let forceQuit = false
 
@@ -37,7 +37,7 @@ app.on('ready', async () => {
     show: false
   })
 
-  if (isDevelopment) {
+  if (!isProduction) {
     await installExtensions()
     const chokidar = require('chokidar')
     chokidar.watch('./index.js').on('change',
@@ -56,10 +56,10 @@ app.on('ready', async () => {
   })
 
   mainWindow.webContents.on('did-finish-load', () => {
-    // Handle window logic properly on macOS:
-    // 1. App should not terminate if window has been closed
-    // 2. Click on icon in dock should re-open the window
-    // 3. ⌘+Q should close the window and quit the app
+    /* Handle window logic properly on macOS:
+    1. App should not terminate if window has been closed
+    2. Click on icon in dock should re-open the window
+    3. ⌘+Q should close the window and quit the app */
     if (process.platform === 'darwin') {
       mainWindow.on('close', function (e) {
         if (!forceQuit) {
