@@ -24,7 +24,7 @@ module.exports = toolbox => {
 
     await Promise.all(configFiles);
 
-    return copy(path.resolve('../templates/source'), `${name}/`, {
+    return copy(path.resolve(__dirname, '../templates/source'), `${name}/`, {
       overwrite: true,
     });
   }
