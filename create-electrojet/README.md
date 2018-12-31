@@ -1,1 +1,7 @@
-README.md
+# Electrojet 
+
+## Usage
+
+```
+npm init electrojet name
+```
