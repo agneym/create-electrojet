@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = toolbox => {
   async function copyFiles(name) {
     const {
@@ -22,7 +24,7 @@ module.exports = toolbox => {
 
     await Promise.all(configFiles);
 
-    return copy('../templates/source', `${name}/`, {
+    return copy(path.resolve('../templates/source'), `${name}/`, {
       overwrite: true,
     });
   }
