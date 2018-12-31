@@ -6,22 +6,23 @@ module.exports = {
     const {
       parameters,
       print: { info, success },
-      validateName,
+      validate,
       installPackages,
       copyFiles,
     } = toolbox;
 
-    const name = parameters.first;
-
+    const { first: name, second: repo } = parameters;
+    
     const props = {
-      name
+      name,
+      repo,
     }
 
-    if (!validateName(name)) {
+    if (!validate.name(props) && !validate.repo(props)) {
       return;
     }
 
-    await copyFiles(name);
+    await copyFiles(props);
 
     await installPackages(props);
 

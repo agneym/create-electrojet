@@ -19,6 +19,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "download-git-repo": "^1.1.0",
     "gluegun": "next"
   },
   "devDependencies": {
