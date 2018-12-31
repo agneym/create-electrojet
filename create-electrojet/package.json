@@ -1,6 +1,6 @@
 {
   "name": "create-electrojet",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Electrojet CLI",
   "bin": {
     "create-electrojet": "bin/create-electrojet"
