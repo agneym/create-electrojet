@@ -1,6 +1,6 @@
 const path = require('path')
 const { app, BrowserWindow } = require('electron')
-const isDevelopment = process.env.NODE_ENV === 'DEV'
+const isDevelopment = process.env.NODE_ENV === 'development'
 let mainWindow
 let forceQuit = false
 
