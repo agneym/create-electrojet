@@ -1,7 +1,7 @@
 {
-  "name": "<%= props.name %>",
+  "name": "two",
   "version": "0.0.1",
-  "description": "<%= props.name %> Electron App",
+  "description": "Electron App",
   "main": "index.js",
   "scripts": {
     "start": "electrojet-scripts start",

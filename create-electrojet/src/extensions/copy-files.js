@@ -4,27 +4,19 @@ module.exports = toolbox => {
   async function copyFiles(name) {
     const {
       filesystem: { copy, dir, },
-      template: { generate },
+      patching: { update, },
     } = toolbox;
 
     await dir(name);
 
-    const files = [
-      'package.json.ejs',
-      'README.md.ejs',
-    ];
+    const templates = path.resolve(__dirname, '../templates');
 
-    const configFiles = files.reduce((acc, file) => {
-      const template = `/${file}`;
-      const target = `${name}/${file.replace('.ejs', '')}`;
-      const props = { name };
-      const gen = generate({ template, target, props });
-      return acc.concat([gen]);
-    }, []);
+    update(path.join(templates, 'package.json'), (config) => {
+      config.name = name;
+      return config;
+    });
 
-    await Promise.all(configFiles);
-
-    return copy(path.resolve(__dirname, '../templates/source'), `${name}/`, {
+    return copy(templates, `${name}/`, {
       overwrite: true,
     });
   }
