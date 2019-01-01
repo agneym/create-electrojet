@@ -1,0 +1,18 @@
+{
+  "name": "@electrojet/sass",
+  "version": "0.0.1",
+  "description": "Use SCSS/SASS in your electrojet project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass",
+    "electrojet"
+  ],
+  "author": "Boy with Silver Wings <agney@outlook.in>",
+  "license": "ISC",
+  "dependencies": {
+    "sass-loader": "^7.1.0"
+  }
+}

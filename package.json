@@ -2,7 +2,7 @@
   "private": true,
   "workspaces": [
     "create-electrojet",
-    "starters/*"
+    "packages/*"
   ],
   "dependencies": {}
 }
