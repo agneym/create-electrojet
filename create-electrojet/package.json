@@ -20,7 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "download-git-repo": "^1.1.0",
-    "gluegun": "next"
+    "gluegun": "next",
+    "ora": "^3.0.0"
   },
   "devDependencies": {
     "husky": "^1.3.1",

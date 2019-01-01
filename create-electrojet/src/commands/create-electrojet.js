@@ -22,6 +22,8 @@ module.exports = {
       return;
     }
 
+    success("Welcome to Electrojet CLI");
+
     await copyFiles(props);
 
     await installPackages(props);
