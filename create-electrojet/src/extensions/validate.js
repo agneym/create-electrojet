@@ -1,10 +1,10 @@
 module.exports = toolbox => {
+  const {
+    print: { error, info },
+    strings: { kebabCase }
+  } = toolbox;
+  
   function validateName({ name }) {
-    const {
-      print: { error, info },
-      strings: { kebabCase }
-    } = toolbox;
-
     if (!name || name.length === 0) {
       error('You must provide a valid CLI name.');
       info('Example: create-electrojet new foo <github-repo>');

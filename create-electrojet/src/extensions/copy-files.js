@@ -6,12 +6,12 @@ module.exports = toolbox => {
     const {
       filesystem: { dir, },
       patching: { update, },
-      print: { spin, },
+      print,
     } = toolbox;
 
     await dir(name);
 
-    const spinner = spin("Trying to fetch git repo: ", repo).start();
+    const spinner = print.spin("Trying to fetch git repo: ", repo).start();
 
     try {
       await downloadGit(repo, path.join(process.cwd(), name));
@@ -19,6 +19,7 @@ module.exports = toolbox => {
     } catch(error) {
       spinner.fail("Failed to fetch repository");
       print.error(error);
+      process.exit();
       return;
     }
 

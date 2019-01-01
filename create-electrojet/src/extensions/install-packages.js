@@ -2,15 +2,14 @@ module.exports = toolbox => {
   function installPackages(props) {
     const {
       system: { which, spawn },
-      print: { success, info }
+      print: { info },
     } = toolbox;
-
-    success('Generated files successfully');
-    info('Starting package installation');
 
     const npmPath = which('npm');
 
-    return spawn(`cd ${props.name} && ${npmPath} install && ${npmPath} run --quiet format`, {
+    info("Starting package installation");
+
+    return spawn(`cd ${props.name} && ${npmPath} install --silent && ${npmPath} run --quiet format`, {
       shell: true,
       stdio: 'inherit',
       stderr: 'inherit'

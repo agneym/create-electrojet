@@ -1,5 +1,6 @@
 const emoji = require("node-emoji");
 
+const { DEFAULT_PACKAGE } = require("../utils/constants");
 const greeting = require("../utils/greeting");
 
 module.exports = {
@@ -9,13 +10,13 @@ module.exports = {
   run: async toolbox => {
     const {
       parameters,
-      print: { info, success },
+      print: { info, success, printCommands, },
       validate,
       installPackages,
       copyFiles,
     } = toolbox;
 
-    const { first: name, second: repo } = parameters;
+    const { first: name, second: repo = DEFAULT_PACKAGE } = parameters;
     
     const props = {
       name,
@@ -23,6 +24,7 @@ module.exports = {
     }
 
     if (!validate.name(props) && !validate.repo(props)) {
+      printCommands(toolbox);
       return;
     }
 
