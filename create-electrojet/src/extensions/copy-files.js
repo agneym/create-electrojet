@@ -1,5 +1,4 @@
 const path = require("path");
-const ora = require("ora");
 const downloadGit = require("../utils/download-git");
 
 module.exports = toolbox => {
@@ -7,12 +6,12 @@ module.exports = toolbox => {
     const {
       filesystem: { dir, },
       patching: { update, },
-      print,
+      print: { spin, },
     } = toolbox;
 
     await dir(name);
 
-    const spinner = ora("Trying to fetch git repo: ", repo).start();
+    const spinner = spin("Trying to fetch git repo: ", repo).start();
 
     try {
       await downloadGit(repo, path.join(process.cwd(), name));
