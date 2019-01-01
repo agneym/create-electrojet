@@ -16,15 +16,23 @@ module.exports = {
       copyFiles,
     } = toolbox;
 
-    const { first: name, second: repo = DEFAULT_PACKAGE } = parameters;
+    const {
+      first: name,
+      second: repo = DEFAULT_PACKAGE,
+      options: {
+        npm = false,
+      }
+    } = parameters;
     
     const props = {
       name,
       repo,
+      npm,
     }
 
     if (!validate.name(props) && !validate.repo(props)) {
       printCommands(toolbox);
+      process.exit();
       return;
     }
 
