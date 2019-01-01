@@ -4,10 +4,19 @@ const downloadGit = require("../utils/download-git");
 module.exports = toolbox => {
   async function copyFiles({ name, repo }) {
     const {
-      filesystem: { dir, },
+      filesystem: { dir, exists },
       patching: { update, },
       print,
+      prompt: { confirm },
     } = toolbox;
+
+    if(exists(name)) {
+      print.warning(`A file/folder by this name already exists`);
+      const continueOps = await confirm("Are you sure to continue?");
+      if(!continueOps) {
+        process.exit();
+      }
+    }
 
     await dir(name);
 
