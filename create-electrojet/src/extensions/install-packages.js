@@ -5,11 +5,11 @@ module.exports = toolbox => {
       print: { info },
     } = toolbox;
 
-    const npmPath = which('npm');
+    const packageManager = which('yarn') ? 'yarn' : 'npm';
 
     info("Starting package installation");
 
-    return spawn(`cd ${props.name} && ${npmPath} install --silent && ${npmPath} run --quiet format`, {
+    return spawn(`cd ${props.name} && ${packageManager} install`, {
       shell: true,
       stdio: 'inherit',
       stderr: 'inherit'
