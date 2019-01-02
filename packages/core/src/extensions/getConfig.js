@@ -1,3 +1,5 @@
+const mergeConfig = require("./mergeConfig");
+
 module.exports = {
   /**
    * Gets config file from root of the project
