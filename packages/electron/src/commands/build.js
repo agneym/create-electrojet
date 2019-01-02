@@ -1,8 +1,8 @@
-const webpack = require('webpack')
 const packager = require('electron-packager')
+const core = require('@electrojet/core')
 const ora = require("ora")
 
-const { getPackagerConfig, getConfig, getWebpackConfig } = require('../extensions/getConfig')
+const { getPackagerConfig, getConfig } = require('../extensions/getConfig')
 
 /**
  * Triggered when start command is run from the CLI
@@ -12,46 +12,24 @@ const { getPackagerConfig, getConfig, getWebpackConfig } = require('../extension
 async function build (cli) {
   const env = 'prod'
 
-  const config = await getConfig()
+  const userConfig = await getConfig()
   
-  const webpackConfig = getWebpackConfig(env, config.plugins)
-  const compiler = webpack(webpackConfig)
+  await core.build()
 
-  compiler.run(async (err, stats) => {
-    if (err) {
-      console.error(err.stack || err)
-      if (err.details) {
-        console.error(err.details)
-      }
-      return
-    }
+  const spinner = ora("Starting to generate build").start()
 
-    const info = stats.toJson()
+  try {
+    const config = await getPackagerConfig(userConfig.buildOptions)
 
-    if (stats.hasErrors()) {
-      console.error(info.errors)
-      return
-    }
-
-    if (stats.hasWarnings()) {
-      console.warn(info.warnings)
-    }
-
-    const spinner = ora("Starting to generate build").start()
-
-    try {
-      const config = await getPackagerConfig(config.buildOptions)
-
-      const appPaths = await packager(config)
-      spinner.succeed(`Generated builds successfully at
-        ${appPaths.join('\n')}
-      `);
-    } catch(error) {
-      spinner.fail(`Could not generate build :(
-        ${error}  
-      `)
-    }
-  })
+    const appPaths = await packager(config)
+    spinner.succeed(`Generated builds successfully at
+      ${appPaths.join('\n')}
+    `);
+  } catch(error) {
+    spinner.fail(`Could not generate build :(
+      ${error}  
+    `)
+  }
 }
 
 module.exports = build

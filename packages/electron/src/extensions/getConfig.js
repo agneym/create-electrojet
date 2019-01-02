@@ -21,24 +21,6 @@ module.exports = {
   },
 
   /**
-  * Returns the required webpack configuration merging user and provided configs
-  * @param {string} env - Current running environment
-  * @param {Object} userConfig - configuration object setup by the user
-  * @returns {Object}
-  */
-  getWebpackConfig: function(env, userConfig) {
-    const webpackMerge = require("webpack-merge")
-    const ownConfig = require('../webpack.config.js')({
-      env
-    })
-
-    return userConfig.reduce((acc, configObj) => {
-      const { resolve, options } = configObj;
-      return webpackMerge(acc, resolve(env, options))
-    }, ownConfig)
-  },
-
-  /**
    * Get configuration options for packager
    * @param {Object} result
    * @param {boolean} result.isEmpty 
