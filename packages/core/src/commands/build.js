@@ -1,15 +1,13 @@
 const webpack = require('webpack')
-const packager = require('electron-packager')
-const ora = require("ora")
 
-const { getPackagerConfig, getConfig, getWebpackConfig } = require('../extensions/getConfig')
+const { getConfig, getWebpackConfig } = require('../extensions/getConfig')
 
 /**
  * Triggered when start command is run from the CLI
  * Runs webpack dev server and sets electron on watch
- * @param {Object} cli
+ * @param {Object} options
  */
-async function build (cli) {
+async function build (options) {
   const env = 'prod'
 
   const config = await getConfig()
@@ -17,7 +15,7 @@ async function build (cli) {
   const webpackConfig = getWebpackConfig(env, config.plugins)
   const compiler = webpack(webpackConfig)
 
-  compiler.run(async (err, stats) => {
+  compiler.run((err, stats) => {
     if (err) {
       console.error(err.stack || err)
       if (err.details) {
@@ -30,28 +28,15 @@ async function build (cli) {
 
     if (stats.hasErrors()) {
       console.error(info.errors)
-      return
+      throw new Error(info.errors);
     }
 
     if (stats.hasWarnings()) {
       console.warn(info.warnings)
     }
 
-    const spinner = ora("Starting to generate build").start()
-
-    try {
-      const config = await getPackagerConfig(config.buildOptions)
-
-      const appPaths = await packager(config)
-      spinner.succeed(`Generated builds successfully at
-        ${appPaths.join('\n')}
-      `);
-    } catch(error) {
-      spinner.fail(`Could not generate build :(
-        ${error}  
-      `)
-    }
-  })
+    return Promise.resolve();
+  });
 }
 
 module.exports = build

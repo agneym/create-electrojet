@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
-const spawn = require('cross-spawn')
 
 const {getConfig, getWebpackConfig} = require('../extensions/getConfig')
 const getPort = require('../extensions/getPort')
@@ -8,11 +7,11 @@ const getPort = require('../extensions/getPort')
 /**
  * Triggered when start command is run from the CLI
  * Runs webpack dev server and sets electron on watch
- * @param {object} cli
+ * @param {object} options
  */
-async function start (cli) {
+async function start (options) {
   const env = 'dev'
-  const userPort = cli.flags.port
+  const userPort = options.flags.port
 
   const port = await getPort(userPort)
 
@@ -29,20 +28,16 @@ async function start (cli) {
     clientLogLevel: 'none'
   })
 
-  server.listen(userPort, 'localhost', (err) => {
+  server.listen(port, 'localhost', (err) => {
     if (err) {
       console.error(err.stack || err)
       if (err.details) {
         console.error(err.details)
       }
-      return
+      throw new Error(err)
     }
 
-    spawn(`npx electron . --port=${port}`, {
-      shell: true,
-      stdio: 'inherit',
-      stderr: 'inherit'
-    })
+    return Promise.resolve();
   })
 }
 

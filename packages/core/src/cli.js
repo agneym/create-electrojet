@@ -5,7 +5,7 @@ const start = require('../src/commands/start');
 const build = require('../src/commands/build');
 const validateCommand = require('./extensions/validateCommand');
 
-function run(argv) {
+function run() {
   const cli = meow(
     `
     Usage
