@@ -4,15 +4,16 @@ const { getConfig, getWebpackConfig } = require('../extensions/getConfig')
 
 /**
  * Triggered when start command is run from the CLI
- * Runs webpack dev server and sets electron on watch
+ * Triggers a webpack build into the dist folder
  * @param {Object} options
+ * @returns {Promise}
  */
 async function build (options) {
   const env = 'prod'
 
   const config = await getConfig()
   
-  const webpackConfig = getWebpackConfig(env, config.plugins)
+  const webpackConfig = getWebpackConfig(env, options.plugins, config.plugins)
   const compiler = webpack(webpackConfig)
 
   return new Promise(resolve => {

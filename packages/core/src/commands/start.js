@@ -6,8 +6,9 @@ const getPort = require('../extensions/getPort')
 
 /**
  * Triggered when start command is run from the CLI
- * Runs webpack dev server and sets electron on watch
+ * Runs webpack dev server on watch
  * @param {object} options
+ * @returns {Promise}
  */
 async function start (options) {
   const env = 'dev'
@@ -17,7 +18,7 @@ async function start (options) {
 
   const config = await getConfig()
 
-  const webpackConfig = getWebpackConfig(env, config.plugins)
+  const webpackConfig = getWebpackConfig(env, options.plugins, config.plugins)
   const compiler = webpack(webpackConfig)
 
   const server = new WebpackDevServer(compiler, {
