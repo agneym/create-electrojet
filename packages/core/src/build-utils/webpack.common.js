@@ -8,7 +8,6 @@ module.exports = {
     filename: 'bundle.js',
     path: commonPaths.appDist
   },
-  target: 'electron-renderer',
   resolve: {
     extensions: ['.js']
   },
