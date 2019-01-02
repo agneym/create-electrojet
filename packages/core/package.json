@@ -1,6 +1,6 @@
 {
   "name": "@electrojet/core",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Build scripts for use with create-electrojet",
   "bin": {
     "core-scripts": "bin/core-scripts"
