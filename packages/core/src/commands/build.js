@@ -15,28 +15,30 @@ async function build (options) {
   const webpackConfig = getWebpackConfig(env, config.plugins)
   const compiler = webpack(webpackConfig)
 
-  compiler.run((err, stats) => {
-    if (err) {
-      console.error(err.stack || err)
-      if (err.details) {
-        console.error(err.details)
+  return new Promise(resolve => {
+    compiler.run((err, stats) => {
+      if (err) {
+        console.error(err.stack || err)
+        if (err.details) {
+          console.error(err.details)
+        }
+        return
       }
-      return
-    }
 
-    const info = stats.toJson()
+      const info = stats.toJson()
 
-    if (stats.hasErrors()) {
-      console.error(info.errors)
-      throw new Error(info.errors);
-    }
+      if (stats.hasErrors()) {
+        console.error(info.errors)
+        throw new Error(info.errors);
+      }
 
-    if (stats.hasWarnings()) {
-      console.warn(info.warnings)
-    }
+      if (stats.hasWarnings()) {
+        console.warn(info.warnings)
+      }
 
-    return Promise.resolve();
-  });
+      return resolve();
+    });
+  })
 }
 
 module.exports = build

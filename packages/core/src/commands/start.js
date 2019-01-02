@@ -28,16 +28,18 @@ async function start (options) {
     clientLogLevel: 'none'
   })
 
-  server.listen(port, 'localhost', (err) => {
-    if (err) {
-      console.error(err.stack || err)
-      if (err.details) {
-        console.error(err.details)
+  return new Promise(resolve => {
+    server.listen(port, 'localhost', (err) => {
+      if (err) {
+        console.error(err.stack || err)
+        if (err.details) {
+          console.error(err.details)
+        }
+        throw new Error(err)
       }
-      throw new Error(err)
-    }
 
-    return Promise.resolve();
+      return resolve()
+    })
   })
 }
 
