@@ -8,7 +8,7 @@ const { getConfig, getWebpackConfig } = require('../extensions/getConfig')
  * @param {Object} options
  * @returns {Promise}
  */
-async function build (options) {
+async function build (options = {}) {
   const env = 'prod'
 
   const config = await getConfig()

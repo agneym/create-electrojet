@@ -10,7 +10,7 @@ const getPort = require('../extensions/getPort')
  * @param {object} options
  * @returns {Promise}
  */
-async function start (options) {
+async function start (options = {}) {
   const env = 'dev'
   const userPort = options.flags.port
 
