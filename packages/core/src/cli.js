@@ -9,17 +9,17 @@ function run(argv) {
   const cli = meow(
     `
     Usage
-      $ electron-scripts <input>
+      $ core-scripts <input>
     
     Options
       --port, -p Port
  
     Examples
       Start the script in development mode.
-      $ electron-scripts start --port=4567
+      $ core-scripts start --port=4567
 
       Build the app into build targets
-      $ electron-scripts build
+      $ core-scripts build
   `,
     {
       flags: {

@@ -1,4 +1,4 @@
-# Electrojet Scripts CLI
+# Electrojet Scripts
 
 [![npm version](https://badge.fury.io/js/electrojet-scripts.svg)](https://badge.fury.io/js/electrojet-scripts)
 
