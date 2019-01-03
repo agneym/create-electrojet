@@ -6,7 +6,7 @@
     "create-electrojet": "bin/create-electrojet"
   },
   "scripts": {
-    "format": "prettier --write **/*.{js,json} && standard --fix",
+    "format": "standard --fix && prettier --write **/*.{js,json}",
     "lint": "standard",
     "test": "jest",
     "watch": "jest --watch",
@@ -27,8 +27,7 @@
   "devDependencies": {
     "husky": "^1.3.1",
     "jest": "^23.6.0",
-    "lint-staged": "^8.1.0",
-    "prettier-standard": "^8.0.1"
+    "lint-staged": "^8.1.0"
   },
   "jest": {
     "testEnvironment": "node"
