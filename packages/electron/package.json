@@ -6,7 +6,7 @@
     "electrojet-electron": "bin/electrojet-electron"
   },
   "scripts": {
-    "format": "standard --fix && prettier --write **/*.{js,json}",
+    "format": "standard --fix && prettier --write src/**/*.{js,json}",
     "lint": "standard",
     "test": "jest",
     "watch": "jest --watch",
@@ -33,12 +33,13 @@
     "electron-rebuild": "^1.8.2",
     "enquirer": "^2.3.0",
     "fs-jetpack": "^2.2.0",
-    "husky": "^1.3.1",
     "meow": "^5.0.0",
     "ora": "^3.0.0"
   },
   "devDependencies": {
+    "husky": "^1.3.1",
     "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.12.1",
     "standard": "^12.0.1"
   },

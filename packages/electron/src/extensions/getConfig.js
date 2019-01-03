@@ -3,20 +3,22 @@ module.exports = {
    * Gets config file from root of the project
    * @returns {Object}
    */
-  getConfig: async function () {
-    const cosmiconfig = require('cosmiconfig')
-    const explorer = cosmiconfig('electrojet')
+  getConfig: async function() {
+    const cosmiconfig = require("cosmiconfig");
+    const explorer = cosmiconfig("electrojet");
     try {
-      const result = await explorer.search()
+      const result = await explorer.search();
       if (!result || result.isEmpty) {
-        return require('./defaultConfig')
+        return require("./defaultConfig");
       } else {
-        return result.config
+        return result.config;
       }
     } catch (err) {
-      console.error('Could not read config file. Please check the following error message for help')
-      console.error(err)
-      process.exit()
+      console.error(
+        "Could not read config file. Please check the following error message for help"
+      );
+      console.error(err);
+      process.exit();
     }
   },
 
@@ -28,15 +30,15 @@ module.exports = {
    * @param {Object} result.config.buildOptions - Options for electron packager
    * @returns {Object}
    */
-  getPackagerConfig: function (result) {
+  getPackagerConfig: function(result) {
     const defaultConfig = {
       dir: process.cwd(),
-      all: true
-    }
+      all: true,
+    };
     if (!result) {
-      return defaultConfig
+      return defaultConfig;
     } else {
-      return Object.assign(defaultConfig, result)
+      return Object.assign(defaultConfig, result);
     }
-  }
-}
+  },
+};

@@ -1,4 +1,4 @@
-const chalk = require('chalk')
+const chalk = require("chalk");
 
 /**
  * Analyses the command from user and validates it
@@ -6,15 +6,15 @@ const chalk = require('chalk')
  * @param {string} userCommand
  * @returns {boolean}
  */
-function validateCommand (cli, userCommand) {
-  const commands = ['start', 'build']
-  const command = userCommand.trim()
+function validateCommand(cli, userCommand) {
+  const commands = ["start", "build"];
+  const command = userCommand.trim();
   if (!command || !commands.includes(command)) {
-    chalk.error('Please enter a valid command')
-    cli.showHelp()
-    return false
+    chalk.error("Please enter a valid command");
+    cli.showHelp();
+    return false;
   }
-  return true
+  return true;
 }
 
-module.exports = validateCommand
+module.exports = validateCommand;
