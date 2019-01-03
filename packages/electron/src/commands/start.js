@@ -1,4 +1,4 @@
-const core = require("@electrojet/core")
+const core = require('@electrojet/core')
 const spawn = require('cross-spawn')
 
 /**
@@ -7,11 +7,11 @@ const spawn = require('cross-spawn')
  * @param {object} cli
  */
 async function start (cli) {
-  const env = 'dev'
+  const port = cli.flags.port
 
   await core.start({
     flags: {
-      port: cli.flags.port,
+      port
     }
   })
 

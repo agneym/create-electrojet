@@ -14,5 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "sass-loader": "^7.1.0"
-  }
+  },
+  "gitHead": "368ef07370696830a5221f6b98eb76ef1722b624"
 }

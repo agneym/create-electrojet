@@ -26,11 +26,14 @@
   "dependencies": {
     "@electrojet/core": "^0.0.1",
     "chalk": "^2.4.1",
+    "chokidar": "^2.0.4",
     "cosmiconfig": "^5.0.7",
     "cross-spawn": "^6.0.5",
     "electron-packager": "^13.0.1",
+    "electron-rebuild": "^1.8.2",
     "enquirer": "^2.3.0",
     "fs-jetpack": "^2.2.0",
+    "husky": "^1.3.1",
     "meow": "^5.0.0",
     "ora": "^3.0.0"
   },
@@ -46,10 +49,6 @@
     "env": [
       "jest"
     ]
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "singleQuote": true
   },
   "husky": {
     "hooks": {
@@ -69,5 +68,9 @@
   },
   "bugs": {
     "url": "https://github.com/BoyWithSilverWings/electrojet-scripts/issues"
+  },
+  "gitHead": "368ef07370696830a5221f6b98eb76ef1722b624",
+  "peerDependencies": {
+    "electron": "^4.0.0"
   }
 }
