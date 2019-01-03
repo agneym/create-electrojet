@@ -26,7 +26,6 @@
   "dependencies": {
     "@electrojet/core": "^0.0.1",
     "chalk": "^2.4.1",
-    "chokidar": "^2.0.4",
     "cosmiconfig": "^5.0.7",
     "cross-spawn": "^6.0.5",
     "electron-packager": "^13.0.1",
