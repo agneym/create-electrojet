@@ -3,6 +3,8 @@ const spawn = require("cross-spawn");
 
 const { webpackConfig } = require("../extensions/defaultConfig");
 const { getConfig } = require("../extensions/getConfig");
+const invokeScript = require("../extensions/invokeScript");
+
 /**
  * Triggered when start command is run from the CLI
  * Starts dev server and sets electron on watch
@@ -24,7 +26,10 @@ async function start(cli) {
     ],
   });
 
-  spawn(`npx electron . --port=${port}`, {
+  await invokeScript(config, "prestart");
+
+  const electronPath = require(path.resolve(dir, "node_modules/electron"));
+  spawn(`${electronPath} ${process.cwd()} --port=${port}`, {
     shell: true,
     stdio: "inherit",
     stderr: "inherit",
