@@ -7,16 +7,15 @@ const download = require("download-git-repo");
  * @returns {Promise}
  */
 function downloadGit(repo, target) {
-  return new Promise((resolve) => {
-    download(repo, target, {}, (error) => {
-      if(error) {
+  return new Promise(resolve => {
+    download(repo, target, {}, error => {
+      if (error) {
         throw new Error(error);
       } else {
         resolve();
       }
     });
-  })
+  });
 }
 
 module.exports = downloadGit;
-

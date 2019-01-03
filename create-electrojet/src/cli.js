@@ -4,12 +4,14 @@ const { build } = require('gluegun')
  * Create the cli and kick it off
  */
 async function run (argv) {
-
   const cli = build()
     .brand('create-electrojet')
     .src(__dirname)
-    .plugins('./node_modules', { matching: 'create-electrojet-*', hidden: true })
-    .help() 
+    .plugins('./node_modules', {
+      matching: 'create-electrojet-*',
+      hidden: true
+    })
+    .help()
     .version()
     .create()
 

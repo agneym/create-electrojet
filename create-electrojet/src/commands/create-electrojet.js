@@ -3,13 +3,13 @@ const emoji = require("node-emoji");
 const greeting = require("../utils/greeting");
 
 module.exports = {
-  name: 'create-electrojet',
+  name: "create-electrojet",
   description: `Creates new electron project \n\n Usage: \n npm init electrojet <project-name> \n\n ----------- OR --------\n\n npm install -g create-electrojet\n create-electrojet <project-name>`,
-  alias: ['g', 'new', 'n', 'generate', 'c', 'create'],
+  alias: ["g", "new", "n", "generate", "c", "create"],
   run: async toolbox => {
     const {
       parameters,
-      print: { info, success, printCommands, },
+      print: { info, success, printCommands },
       validate,
       installPackages,
       copyFiles,
@@ -18,28 +18,23 @@ module.exports = {
 
     const {
       first: name,
-      options: {
-        npm = false,
-        template,
-        starter,
-      }
+      options: { npm = false, template, starter },
     } = parameters;
-    
+
     const props = {
       name,
       template,
       starter,
       npm,
-    }
+    };
 
     if (!validate.name(props)) {
       printCommands(toolbox);
       process.exit();
-      return;
     }
 
-    if(!validate.options(props)) {
-      const fetch = await promptFor('template');
+    if (!validate.options(props)) {
+      const fetch = await promptFor("template");
       props[fetch.type] = fetch.value;
     }
 
@@ -51,5 +46,5 @@ module.exports = {
 
     success(`Generated project under ${props.name}\n`);
     info(`Next Steps:\n\n  1. cd ${props.name}\n  2. npm start`);
-  }
-}
+  },
+};

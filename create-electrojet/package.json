@@ -6,7 +6,7 @@
     "create-electrojet": "bin/create-electrojet"
   },
   "scripts": {
-    "format": "standard --fix && prettier --write **/*.{js,json}",
+    "format": "standard --fix && prettier --write src/**/*.{js,json}",
     "lint": "standard",
     "test": "jest",
     "watch": "jest --watch",

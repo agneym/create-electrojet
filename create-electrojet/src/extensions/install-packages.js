@@ -1,5 +1,4 @@
 module.exports = toolbox => {
-
   const {
     system: { which, spawn },
     print: { info },
@@ -13,7 +12,7 @@ module.exports = toolbox => {
   function determinePackageManager(npmFlag) {
     const npmPath = which("npm");
     const yarnPath = which("yarn");
-    if(npmFlag) {
+    if (npmFlag) {
       return npmPath;
     } else {
       return yarnPath || npmPath;
@@ -22,10 +21,10 @@ module.exports = toolbox => {
 
   /**
    * Installs packages in package.json
-   * @param {Object} props 
+   * @param {Object} props
    * @param {string} props.name name of the repository
    * @param {boolean} props.npm indictor for using npm as package manager
-  */
+   */
   function installPackages(props) {
     const packageManager = determinePackageManager(props.npm);
 
@@ -33,10 +32,10 @@ module.exports = toolbox => {
 
     return spawn(`cd ${props.name} && ${packageManager} install`, {
       shell: true,
-      stdio: 'inherit',
-      stderr: 'inherit'
+      stdio: "inherit",
+      stderr: "inherit",
     });
   }
 
   toolbox.installPackages = installPackages;
-}
+};

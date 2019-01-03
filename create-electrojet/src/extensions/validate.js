@@ -1,19 +1,19 @@
 module.exports = toolbox => {
   const {
     print: { error, info },
-    strings: { kebabCase }
+    strings: { kebabCase },
   } = toolbox;
-  
+
   /**
    * Validate name of the application
-   * @param {Object} param0 
+   * @param {Object} param0
    * @param {string} param0.name - name of the application
    * @returns {boolean}
    */
   function validateName({ name }) {
     if (!name || name.length === 0) {
-      error('You must provide a valid CLI name.');
-      info('Example: create-electrojet new foo <github-repo>');
+      error("You must provide a valid CLI name.");
+      info("Example: create-electrojet new foo <github-repo>");
       return false;
     } else if (!/^[a-z0-9-]+$/.test(name)) {
       const validName = kebabCase(name);
@@ -25,7 +25,7 @@ module.exports = toolbox => {
   }
 
   function validateOptions({ template, starter }) {
-    if(!template && !starter) {
+    if (!template && !starter) {
       return false;
     }
     return true;
@@ -38,8 +38,8 @@ module.exports = toolbox => {
    * @returns {boolean}
    */
   function validateRepo({ repo }) {
-    if(!repo || repo.length === 0) {
-      error('You must provide a valid repo name');
+    if (!repo || repo.length === 0) {
+      error("You must provide a valid repo name");
       return false;
     }
     return true;
@@ -50,4 +50,4 @@ module.exports = toolbox => {
     repo: validateRepo,
     options: validateOptions,
   };
-}
+};
