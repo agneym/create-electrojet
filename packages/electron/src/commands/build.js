@@ -4,6 +4,7 @@ const ora = require("ora");
 const rebuild = require("electron-rebuild");
 
 const { getPackagerConfig, getConfig } = require("../extensions/getConfig");
+const { webpackConfig } = require("../extensions/defaultConfig");
 
 /**
  * Triggered when start command is run from the CLI
@@ -13,7 +14,13 @@ const { getPackagerConfig, getConfig } = require("../extensions/getConfig");
 async function build(cli) {
   const userConfig = await getConfig();
 
-  await core.build();
+  await core.build({
+    plugins: [
+      {
+        resolve: () => webpackConfig,
+      },
+    ],
+  });
 
   const spinner = ora("Starting to generate build").start();
 
