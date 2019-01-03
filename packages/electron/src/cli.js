@@ -32,7 +32,7 @@ function run() {
     }
   );
 
-  const command = cli.input[0]
+  const command = cli.input[0];
 
   if (validateCommand(cli, command)) {
     switch (command) {

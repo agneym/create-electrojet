@@ -1,5 +1,6 @@
 const core = require("@electrojet/core");
 const spawn = require("cross-spawn");
+const path = require("path");
 
 const { webpackConfig } = require("../extensions/defaultConfig");
 const { getConfig } = require("../extensions/getConfig");
@@ -28,8 +29,10 @@ async function start(cli) {
 
   await invokeScript(config, "prestart");
 
+  const dir = process.cwd();
+
   const electronPath = require(path.resolve(dir, "node_modules/electron"));
-  spawn(`${electronPath} ${process.cwd()} --port=${port}`, {
+  spawn(`${electronPath} ${dir} --port=${port}`, {
     shell: true,
     stdio: "inherit",
     stderr: "inherit",
