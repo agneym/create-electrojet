@@ -1,6 +1,5 @@
 const emoji = require("node-emoji");
 
-const { DEFAULT_PACKAGE } = require("../utils/constants");
 const greeting = require("../utils/greeting");
 
 module.exports = {
@@ -14,26 +13,34 @@ module.exports = {
       validate,
       installPackages,
       copyFiles,
+      promptFor,
     } = toolbox;
 
     const {
       first: name,
-      second: repo = DEFAULT_PACKAGE,
       options: {
         npm = false,
+        template,
+        starter,
       }
     } = parameters;
     
     const props = {
       name,
-      repo,
+      template,
+      starter,
       npm,
     }
 
-    if (!validate.name(props) && !validate.repo(props)) {
+    if (!validate.name(props)) {
       printCommands(toolbox);
       process.exit();
       return;
+    }
+
+    if(!validate.options(props)) {
+      const fetch = await promptFor('template');
+      props[fetch.type] = fetch.value;
     }
 
     greeting(`\n${emoji.get("rocket")}  Welcome to Electrojet CLI\n\n`);

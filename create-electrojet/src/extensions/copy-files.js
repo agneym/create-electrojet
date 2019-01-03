@@ -20,7 +20,7 @@ module.exports = toolbox => {
 
     await dir(name);
 
-    const spinner = print.spin("Trying to fetch git repo: ", repo).start();
+    const spinner = print.spin("Trying to fetch git repo ", repo).start();
 
     try {
       await downloadGit(repo, path.join(process.cwd(), name));

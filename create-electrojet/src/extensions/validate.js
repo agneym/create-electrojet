@@ -24,17 +24,22 @@ module.exports = toolbox => {
     return true;
   }
 
+  function validateOptions({ template, starter }) {
+    if(!template && !starter) {
+      return false;
+    }
+    return true;
+  }
+
   /**
    * Validate url for git repo
    * @param {Object} param0
-   * @param {string} param0.name - name of the application
    * @param {string} param0.repo - url for git repo
    * @returns {boolean}
    */
-  function validateRepo({ name, repo }) {
+  function validateRepo({ repo }) {
     if(!repo || repo.length === 0) {
       error('You must provide a valid repo name');
-      info(`Example: create-electrojet new ${name} ${repo}`);
       return false;
     }
     return true;
@@ -43,5 +48,6 @@ module.exports = toolbox => {
   toolbox.validate = {
     name: validateName,
     repo: validateRepo,
+    options: validateOptions,
   };
 }
