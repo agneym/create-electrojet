@@ -1,3 +1,5 @@
 exports.PKG_NAME = "electrojet";
 
-exports.DEFAULT_PACKAGE = "BoyWithSilverWings/electrojet-default";
+exports.DEFAULT_PACKAGE = {
+  electron: "BoyWithSilverWings/electrojet-default",
+}

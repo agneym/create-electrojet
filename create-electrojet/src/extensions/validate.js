@@ -4,6 +4,12 @@ module.exports = toolbox => {
     strings: { kebabCase }
   } = toolbox;
   
+  /**
+   * Validate name of the application
+   * @param {Object} param0 
+   * @param {string} param0.name - name of the application
+   * @returns {boolean}
+   */
   function validateName({ name }) {
     if (!name || name.length === 0) {
       error('You must provide a valid CLI name.');
@@ -18,6 +24,13 @@ module.exports = toolbox => {
     return true;
   }
 
+  /**
+   * Validate url for git repo
+   * @param {Object} param0
+   * @param {string} param0.name - name of the application
+   * @param {string} param0.repo - url for git repo
+   * @returns {boolean}
+   */
   function validateRepo({ name, repo }) {
     if(!repo || repo.length === 0) {
       error('You must provide a valid repo name');
