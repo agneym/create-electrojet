@@ -4,18 +4,17 @@ module.exports = toolbox => {
   const { prompt, validate } = toolbox;
 
   async function forStarter() {
+    const { prompt, validate } = toolbox;
     const question = [
       {
         type: "input",
         name: "starter",
-        message: `Please enter starter git in format:
-        <username>/<repo-name>
-        For eg: BoywithSilverWings/default-starter
-      `,
+        message: `Please enter git starter (<username>/<repo-name>)`,
       },
     ];
     const { starter } = await prompt.ask(question);
-    if (validate.repo(starter)) {
+
+    if (validate.repo({ repo: starter })) {
       return {
         type: "starter",
         value: starter,
@@ -32,7 +31,7 @@ module.exports = toolbox => {
         type: "list",
         name: "template",
         message: "Please select template you are building for",
-        choices: [Object.keys(DEFAULT_PACKAGES), GIT_STARTER_PROMPT],
+        choices: [...Object.keys(DEFAULT_PACKAGES), GIT_STARTER_PROMPT],
       },
     ];
     const { template } = await prompt.ask(question);

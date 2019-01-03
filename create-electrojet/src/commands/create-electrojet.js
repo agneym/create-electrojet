@@ -46,5 +46,6 @@ module.exports = {
 
     success(`Generated project under ${props.name}\n`);
     info(`Next Steps:\n\n  1. cd ${props.name}\n  2. npm start`);
+    greeting(`\n${emoji.get("thumbsup")} Best of Luck for your project`);
   },
 };
