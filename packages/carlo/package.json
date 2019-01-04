@@ -1,6 +1,6 @@
 {
   "name": "@electrojet/carlo",
-  "version": "0.0.5",
+  "version": "0.0.1",
   "description": "Build scripts for use with create-electrojet",
   "bin": {
     "electrojet-carlo": "bin/electrojet-carlo"
