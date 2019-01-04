@@ -7,7 +7,6 @@ const {
   getConfig,
   createBuildOptions,
 } = require("../extensions/getConfig");
-const { webpackConfig } = require("../extensions/defaultConfig");
 
 /**
  * Triggered when start command is run from the CLI
@@ -20,7 +19,7 @@ async function build(cli) {
   await core.build({
     plugins: [
       {
-        resolve: () => webpackConfig,
+        resolve: () => {},
       },
     ],
   });
