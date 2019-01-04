@@ -1,7 +1,8 @@
 const core = require("@electrojet/core");
 const ora = require("ora");
+const { exec } = require("pkg");
 
-const { getPackagerConfig, getConfig } = require("../extensions/getConfig");
+const { getPackagerConfig, getConfig, createBuildOptions } = require("../extensions/getConfig");
 const { webpackConfig } = require("../extensions/defaultConfig");
 
 /**
@@ -25,10 +26,8 @@ async function build(cli) {
   try {
     const userPkgConfig = await getPackagerConfig(userConfig.buildOptions);
     
-    const appPaths = await packager(userPkgConfig);
-    spinner.succeed(`Generated builds successfully at
-      ${appPaths.join("\n")}
-    `);
+    await exec(createBuildOptions(userPkgConfig));
+    spinner.succeed(`Generated builds successfully`);
   } catch (error) {
     spinner.fail(`Could not generate build :(
       ${error}  
