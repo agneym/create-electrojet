@@ -21,13 +21,7 @@ async function start(options = {}) {
   const webpackConfig = getWebpackConfig(env, options.plugins, config.plugins);
   const compiler = webpack(webpackConfig);
 
-  const server = new WebpackDevServer(compiler, {
-    contentBase: process.cwd(),
-    hot: true,
-    historyApiFallback: true,
-    publicPath: '/',
-    clientLogLevel: 'none',
-  });
+  const server = new WebpackDevServer(compiler, Object.assign(webpackConfig.devServer, { port }));
 
   return new Promise(resolve => {
     server.listen(port, 'localhost', err => {

@@ -3,7 +3,8 @@ const WebpackBar = require('webpackbar');
 module.exports = {
   mode: 'development',
   devServer: {
-    publicPath: '/',
+    contentBase: process.cwd(),
+    hot: true,
     historyApiFallback: true,
     clientLogLevel: 'none',
   },
