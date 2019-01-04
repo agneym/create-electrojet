@@ -1,4 +1,4 @@
-const webpackMerge = require("webpack-merge");
+const webpackMerge = require('webpack-merge');
 
 /**
  * Merges an array of webpack configurations
@@ -9,9 +9,9 @@ const webpackMerge = require("webpack-merge");
  */
 function mergeConfig(env, configs, initial) {
   return configs.reduce((acc, configObj) => {
-    const { resolve, options } = configObj
-    return webpackMerge.smart(acc, resolve(env, options))
-  }, initial)
+    const { resolve, options } = configObj;
+    return webpackMerge.smart(acc, resolve(env, options));
+  }, initial);
 }
 
 module.exports = mergeConfig;

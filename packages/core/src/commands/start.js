@@ -1,8 +1,8 @@
-const webpack = require('webpack')
-const WebpackDevServer = require('webpack-dev-server')
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
 
-const {getConfig, getWebpackConfig} = require('../extensions/getConfig')
-const getPort = require('../extensions/getPort')
+const { getConfig, getWebpackConfig } = require('../extensions/getConfig');
+const getPort = require('../extensions/getPort');
 
 /**
  * Triggered when start command is run from the CLI
@@ -10,38 +10,38 @@ const getPort = require('../extensions/getPort')
  * @param {object} options
  * @returns {Promise}
  */
-async function start (options = {}) {
-  const env = 'dev'
-  const userPort = options.flags.port
+async function start(options = {}) {
+  const env = 'dev';
+  const userPort = options.flags.port;
 
-  const port = await getPort(userPort)
+  const port = await getPort(userPort);
 
-  const config = await getConfig()
+  const config = await getConfig();
 
-  const webpackConfig = getWebpackConfig(env, options.plugins, config.plugins)
-  const compiler = webpack(webpackConfig)
+  const webpackConfig = getWebpackConfig(env, options.plugins, config.plugins);
+  const compiler = webpack(webpackConfig);
 
   const server = new WebpackDevServer(compiler, {
     contentBase: process.cwd(),
     hot: true,
     historyApiFallback: true,
     publicPath: '/',
-    clientLogLevel: 'none'
-  })
+    clientLogLevel: 'none',
+  });
 
   return new Promise(resolve => {
-    server.listen(port, 'localhost', (err) => {
+    server.listen(port, 'localhost', err => {
       if (err) {
-        console.error(err.stack || err)
+        console.error(err.stack || err);
         if (err.details) {
-          console.error(err.details)
+          console.error(err.details);
         }
-        throw new Error(err)
+        throw new Error(err);
       }
 
-      return resolve()
-    })
-  })
+      return resolve();
+    });
+  });
 }
 
-module.exports = start
+module.exports = start;

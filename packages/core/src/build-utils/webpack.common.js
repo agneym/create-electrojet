@@ -1,15 +1,15 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const commonPaths = require('./common-paths')
+const commonPaths = require('./common-paths');
 
 module.exports = {
   entry: commonPaths.appSrc,
   output: {
     filename: 'bundle.js',
-    path: commonPaths.appDist
+    path: commonPaths.appDist,
   },
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js'],
   },
   module: {
     rules: [
@@ -17,19 +17,19 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg|eot|ttf|woff|woff2)$/i,
         use: [
           {
-            loader: 'file-loader'
-          }
-        ]
+            loader: 'file-loader',
+          },
+        ],
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
-      }
-    ]
+        loader: 'html-loader',
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: commonPaths.index
-    })
-  ]
-}
+      template: commonPaths.index,
+    }),
+  ],
+};

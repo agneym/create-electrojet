@@ -1,6 +1,6 @@
-const webpack = require('webpack')
+const webpack = require('webpack');
 
-const { getConfig, getWebpackConfig } = require('../extensions/getConfig')
+const { getConfig, getWebpackConfig } = require('../extensions/getConfig');
 
 /**
  * Triggered when start command is run from the CLI
@@ -8,38 +8,38 @@ const { getConfig, getWebpackConfig } = require('../extensions/getConfig')
  * @param {Object} options
  * @returns {Promise}
  */
-async function build (options = {}) {
-  const env = 'prod'
+async function build(options = {}) {
+  const env = 'prod';
 
-  const config = await getConfig()
-  
-  const webpackConfig = getWebpackConfig(env, options.plugins, config.plugins)
-  const compiler = webpack(webpackConfig)
+  const config = await getConfig();
+
+  const webpackConfig = getWebpackConfig(env, options.plugins, config.plugins);
+  const compiler = webpack(webpackConfig);
 
   return new Promise(resolve => {
     compiler.run((err, stats) => {
       if (err) {
-        console.error(err.stack || err)
+        console.error(err.stack || err);
         if (err.details) {
-          console.error(err.details)
+          console.error(err.details);
         }
-        return
+        return;
       }
 
-      const info = stats.toJson()
+      const info = stats.toJson();
 
       if (stats.hasErrors()) {
-        console.error(info.errors)
+        console.error(info.errors);
         throw new Error(info.errors);
       }
 
       if (stats.hasWarnings()) {
-        console.warn(info.warnings)
+        console.warn(info.warnings);
       }
 
       return resolve();
     });
-  })
+  });
 }
 
-module.exports = build
+module.exports = build;

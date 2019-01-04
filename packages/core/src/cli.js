@@ -27,8 +27,8 @@ function run() {
           type: 'number',
           alias: 'p',
           default: 4567,
-        }
-      }
+        },
+      },
     }
   );
 

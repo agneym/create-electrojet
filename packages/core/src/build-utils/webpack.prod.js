@@ -1,8 +1,8 @@
-const webpack = require('webpack')
-const WebpackBar = require('webpackbar')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const webpack = require('webpack');
+const WebpackBar = require('webpackbar');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -10,50 +10,47 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.jsx?$/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
         },
-        exclude: /(node_modules|dist|build-utils|webpack.config.js)/
-      }
-    ]
+        exclude: /(node_modules|dist|build-utils|webpack.config.js)/,
+      },
+    ],
   },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true
+        sourceMap: true,
       }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+      new OptimizeCSSAssetsPlugin({}),
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css'
+      chunkFilename: '[id].css',
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
-      DEBUG: false
+      DEBUG: false,
     }),
     new UglifyJsPlugin({
       sourceMap: true,
       uglifyOptions: {
         compress: {
-          inline: false
-        }
-      }
+          inline: false,
+        },
+      },
     }),
     new WebpackBar({
       profile: true,
-      name: "Electrojet",
-    })
-  ]
-}
+      name: 'Electrojet',
+    }),
+  ],
+};
