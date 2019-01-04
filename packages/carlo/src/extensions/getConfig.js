@@ -49,17 +49,14 @@ module.exports = {
    * @param {string} userOptions.host
    */
   createBuildOptions: function(userOptions) {
-    const {
-      target,
-      host,
-    } = userOptions;
+    const { target, host } = userOptions;
     const buildOptions = [process.pwd()];
-    if(target) {
-      buildOptions.push('--target');
+    if (target) {
+      buildOptions.push("--target");
       buildOptions.push(userOptions.target);
     }
-    if(host) {
-      buildOptions.push('--host');
+    if (host) {
+      buildOptions.push("--host");
       buildOptions.push(userOptions.host);
     }
     return buildOptions;

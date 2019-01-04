@@ -15,7 +15,7 @@
   "dependencies": {
     "sass-loader": "^7.1.0"
   },
-  "gitHead": "368ef07370696830a5221f6b98eb76ef1722b624",
+  "gitHead": "20374428aabe7461405a874f0d3b8e9de739c9ee",
   "peerDependencies": {
     "webpack": "^4.28.3"
   }

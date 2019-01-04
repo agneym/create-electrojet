@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const meow = require("meow");
 
-const start = require("../src/commands/start");
-const build = require("../src/commands/build");
+const start = require("./commands/start");
+const build = require('./commands/build')
 const validateCommand = require("./extensions/validateCommand");
 
 function run() {
