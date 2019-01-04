@@ -1,6 +1,5 @@
 const core = require("@electrojet/core");
 const spawn = require("cross-spawn");
-const path = require("path");
 
 const { webpackConfig } = require("../extensions/defaultConfig");
 const { getConfig } = require("../extensions/getConfig");
@@ -31,8 +30,7 @@ async function start(cli) {
 
   const dir = process.cwd();
 
-  const carloPath = require(path.resolve(dir, "node_modules/carlo"));
-  spawn(`${carlo} ${dir} --port=${port}`, {
+  spawn(`node ${dir} --port=${port}`, {
     shell: true,
     stdio: "inherit",
     stderr: "inherit",
