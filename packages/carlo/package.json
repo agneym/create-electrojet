@@ -24,7 +24,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@electrojet/core": "^0.0.1",
+    "@electrojet/core": "^0.0.6",
     "chalk": "^2.4.1",
     "cosmiconfig": "^5.0.7",
     "cross-spawn": "^6.0.5",
