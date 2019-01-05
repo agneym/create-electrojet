@@ -1,0 +1,22 @@
+{
+  "name": "@electrojet/less",
+  "version": "0.0.6",
+  "description": "Use LESS in your electrojet project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "less",
+    "electrojet-cli"
+  ],
+  "author": "Boy with Silver Wings <agney@outlook.in>",
+  "license": "ISC",
+  "dependencies": {
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.5.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  }
+}
