@@ -16,7 +16,7 @@
 npm init electrojet <project-name>
 ```
 
-The CLi will walk you through a set of options for you to select the template/starter. 
+The CLI will walk you through a set of options for you to select the template/starter. 
 
 ### Options
 
@@ -28,7 +28,7 @@ This option allows you to select the template beforehand.
 npm init electrojet <project-name> --template=electron
 ```
 
-[See list of currently available template]()
+[See list of currently available templates](https://github.com/BoyWithSilverWings/create-electrojet#list-of-available-templates)
 
 2. `starter`
 
