@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 
-const { getConfig, getWebpackConfig } = require('../extensions/getConfig');
+const { getConfig, getWebpackConfig } = require('../extensions/get-config');
 
 /**
  * Triggered when start command is run from the CLI

@@ -1,4 +1,4 @@
-const mergeConfig = require('./mergeConfig');
+const mergeConfig = require('./merge-config');
 
 module.exports = {
   /**
@@ -11,7 +11,7 @@ module.exports = {
     try {
       const result = await explorer.search();
       if (!result || result.isEmpty) {
-        return require('./defaultConfig');
+        return require('./default-config');
       } else {
         return result.config;
       }

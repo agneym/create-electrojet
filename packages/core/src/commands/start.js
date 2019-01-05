@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
-const { getConfig, getWebpackConfig } = require('../extensions/getConfig');
-const getPort = require('../extensions/getPort');
+const { getConfig, getWebpackConfig } = require('../extensions/get-config');
+const getPort = require('../extensions/get-port');
 
 /**
  * Triggered when start command is run from the CLI
