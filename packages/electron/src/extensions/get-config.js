@@ -9,7 +9,7 @@ module.exports = {
     try {
       const result = await explorer.search();
       if (!result || result.isEmpty) {
-        return require("./defaultConfig");
+        return require("./default-config");
       } else {
         return result.config;
       }

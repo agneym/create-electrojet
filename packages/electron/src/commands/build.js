@@ -3,8 +3,8 @@ const core = require("@electrojet/core");
 const ora = require("ora");
 const rebuild = require("electron-rebuild");
 
-const { getPackagerConfig, getConfig } = require("../extensions/getConfig");
-const { webpackConfig } = require("../extensions/defaultConfig");
+const { getPackagerConfig, getConfig } = require("../extensions/get-config");
+const { webpackConfig } = require("../extensions/default-config");
 
 /**
  * Triggered when start command is run from the CLI

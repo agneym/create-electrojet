@@ -2,9 +2,9 @@ const core = require("@electrojet/core");
 const spawn = require("cross-spawn");
 const path = require("path");
 
-const { webpackConfig } = require("../extensions/defaultConfig");
-const { getConfig } = require("../extensions/getConfig");
-const invokeScript = require("../extensions/invokeScript");
+const { webpackConfig } = require("../extensions/default-config");
+const { getConfig } = require("../extensions/get-config");
+const invokeScript = require("../extensions/invoke-script");
 
 /**
  * Triggered when start command is run from the CLI

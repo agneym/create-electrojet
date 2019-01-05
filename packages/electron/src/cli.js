@@ -3,7 +3,7 @@ const meow = require("meow");
 
 const start = require("../src/commands/start");
 const build = require("../src/commands/build");
-const validateCommand = require("./extensions/validateCommand");
+const validateCommand = require("./extensions/validate-command");
 
 function run() {
   const cli = meow(
