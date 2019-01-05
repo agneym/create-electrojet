@@ -24,29 +24,6 @@
     "gluegun": "next",
     "node-emoji": "^1.8.1"
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ],
-    "ignore": [
-      "src/templates"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "standard --fix",
-      "prettier --write",
-      "git add"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/BoyWithSilverWings/create-electrojet"

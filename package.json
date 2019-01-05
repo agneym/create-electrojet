@@ -20,5 +20,24 @@
     "@electrojet/electron": "file:packages/electron",
     "@electrojet/sass": "file:plugins/sass",
     "create-electrojet": "file:create-electrojet"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

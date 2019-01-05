@@ -34,25 +34,6 @@
     "meow": "^5.0.0",
     "ora": "^3.0.0"
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/BoyWithSilverWings/electrojet-scripts"
@@ -60,7 +41,6 @@
   "bugs": {
     "url": "https://github.com/BoyWithSilverWings/electrojet-scripts/issues"
   },
-  "gitHead": "368ef07370696830a5221f6b98eb76ef1722b624",
   "peerDependencies": {
     "electron": "^4.0.0"
   }
