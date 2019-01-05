@@ -10,7 +10,6 @@
     "lint": "standard",
     "test": "jest",
     "watch": "jest --watch",
-    "snapupdate": "jest --updateSnapshot",
     "coverage": "jest --coverage"
   },
   "keywords": [
