@@ -53,13 +53,6 @@
     "webpackbar": "^3.1.4",
     "which": "^1.3.1"
   },
-  "devDependencies": {
-    "husky": "^1.3.1",
-    "jest": "^23.6.0",
-    "lint-staged": "^8.1.0",
-    "prettier": "^1.12.1",
-    "standard": "^12.0.1"
-  },
   "jest": {
     "testEnvironment": "node"
   },
