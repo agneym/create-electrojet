@@ -50,7 +50,7 @@ module.exports = {
    */
   createBuildOptions: function(userOptions) {
     const { target, host } = userOptions;
-    const buildOptions = [process.pwd()];
+    const buildOptions = [process.cwd()];
     if (target) {
       buildOptions.push("--target");
       buildOptions.push(userOptions.target);

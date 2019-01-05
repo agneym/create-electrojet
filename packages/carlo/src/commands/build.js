@@ -6,7 +6,7 @@ const {
   getPackagerConfig,
   getConfig,
   createBuildOptions,
-} = require("../extensions/getConfig");
+} = require("../extensions/get-config");
 
 /**
  * Triggered when start command is run from the CLI
