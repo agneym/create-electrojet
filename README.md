@@ -20,7 +20,7 @@ The CLI will walk you through a set of options for you to select the template/st
 
 ### Options
 
-1. `template`
+#### 1. Template
 
 This option allows you to select the template beforehand.
 
@@ -30,7 +30,7 @@ npm init electrojet <project-name> --template=electron
 
 [See list of currently available templates](https://github.com/BoyWithSilverWings/create-electrojet#list-of-available-templates)
 
-2. `starter`
+#### 2. Starter
 
 This option allows you to select a starter beforehand.
 
@@ -40,7 +40,7 @@ npm init electrojet <project-name> --starter=<User>/<RepoName>
 
 This format works for repositories hosted on github. 
 
-[How do I customise it to work with Gitlab /  Bitbucket?]()
+[How do I customise it to work with Gitlab /  Bitbucket?](https://github.com/BoyWithSilverWings/create-electrojet#)
 
 #### How are they different?
 
@@ -63,5 +63,8 @@ A starter is much more customised and opiniated in it's design. For example, a s
 ## List of plugins
 
 1. [SASS](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/plugins/sass)
+
+
+## How do I customise it to with Bitbucket / Gitlab Templates
 
 
