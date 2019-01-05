@@ -13,6 +13,7 @@
   "author": "Boy with Silver Wings <agney@outlook.in>",
   "license": "ISC",
   "dependencies": {
+    "mini-css-extract-plugin": "^0.5.0",
     "sass-loader": "^7.1.0"
   },
   "gitHead": "20374428aabe7461405a874f0d3b8e9de739c9ee",
