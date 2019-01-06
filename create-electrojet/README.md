@@ -51,8 +51,36 @@ A starter is much more customised and opiniated in it's design. For example, a s
 
 ## How do I add _______ to the configuration?
 
-> Docs is Progress
+1. Add a plugin
 
+  There are plugins available for Electrojet that can add functionality to existing configurations. 
+  You can add them to `electrojet.config.js` plugins array.
+
+  (https://github.com/BoyWithSilverWings/create-electrojet#list-of-plugins)
+
+2. Roll your own
+
+  If you can't find a plugin, you can always write one. 
+
+  In your plugins directory, add a function that takes the format:
+
+  ```js
+  module.exports = {
+    plugins: [
+      {
+        resolve: function (
+          env,  // Current running env, either "dev" or "prod". Allows you to create multiple configs for development and production
+          context,  // The current configuration, mutating this won't help
+          options,  // options from the user, you don't need this for writing custom config
+        ) {
+          return customConfig; // Return custom configuration
+        }
+      }
+    ]
+  }
+  ```
+
+The webpack configuration object that you return from the resolve functions gets [shallow merged](https://github.com/survivejs/webpack-merge#mergesmartconfiguration-configuration) into running configuration. 
 
 ## List of available templates
 
@@ -67,4 +95,4 @@ A starter is much more customised and opiniated in it's design. For example, a s
 
 ## How do I customise it to with Bitbucket / Gitlab Templates
 
-
+> Docs in progress
