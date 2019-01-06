@@ -96,10 +96,10 @@ A starter is much more customised and opiniated in it's design. For example, a s
 ## How do I build a CLI for my favorite technology?
 
 1. Install `@electrojet/core` for defaults in building Webpages. 
-2. Use [Node APIs]() for `@electrojet/core` to extend the start and build scripts.
-3. If you are building a Template (and not a starter, [see difference]), give us a PR to include in electrojet templates.
+2. Use [Node APIs](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/core#node-api) for `@electrojet/core` to extend the start and build scripts.
+3. If you are building a Template (and not a starter, [see difference]()https://github.com/BoyWithSilverWings/create-electrojet#how-are-they-different), give us a PR to include in electrojet templates.
 
-See [Electrojet Carlo]() for an example.
+See any of the [packages](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages) for an example.
 
 ## How do I customise it to with Bitbucket / Gitlab Templates
 
