@@ -4744,6 +4744,11 @@ expect@^23.6.0:
     jest-message-util "^23.4.0"
     jest-regex-util "^23.3.0"
 
+expose-loader@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/expose-loader/-/expose-loader-0.7.5.tgz#e29ea2d9aeeed3254a3faa1b35f502db9f9c3f6f"
+  integrity sha512-iPowgKUZkTPX5PznYsmifVj9Bob0w2wTHVkt/eYNPSzyebkUgIedmskf/kcfEIWpiWjg3JRjnW+a17XypySMuw==
+
 express@^4.16.2:
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.4.tgz#fddef61926109e24c515ea97fd2f1bdbf62df12e"
@@ -9210,6 +9215,11 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
+phaser-ce@^2.11.1:
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/phaser-ce/-/phaser-ce-2.11.1.tgz#a40f918151ceae3e6ed270aec9e0606d198c655d"
+  integrity sha512-5Ta9g5bZI7YzKzON6LoUGhvkG64swmbHvFntydjNssLLbDtWb9eo3WxuVeKkbxl4bJ/iIP/Zs6QbuxhxsWwoWg==
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
