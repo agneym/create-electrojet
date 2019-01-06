@@ -93,6 +93,14 @@ A starter is much more customised and opiniated in it's design. For example, a s
 1. [SASS](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/plugins/sass)
 2. [LESS](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/plugins/less)
 
+## How do I build a CLI for my favorite technology?
+
+1. Install `@electrojet/core` for defaults in building Webpages. 
+2. Use [Node APIs]() for `@electrojet/core` to extend the start and build scripts.
+3. If you are building a Template (and not a starter, [see difference]), give us a PR to include in electrojet templates.
+
+See [Electrojet Carlo]() for an example.
+
 ## How do I customise it to with Bitbucket / Gitlab Templates
 
 > Docs in progress
