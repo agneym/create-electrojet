@@ -4,4 +4,5 @@ module.exports = {
   appSrc: path.join(process.cwd(), 'src/index.js'),
   appDist: path.join(process.cwd(), 'dist'),
   index: path.join(process.cwd(), 'src/index.html'),
+  public: path.join(process.cwd(), 'public'),
 };

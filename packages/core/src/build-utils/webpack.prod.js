@@ -1,8 +1,11 @@
 const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const commonPaths = require("./common-paths");
 
 module.exports = {
   mode: 'production',
@@ -53,5 +56,9 @@ module.exports = {
       profile: true,
       name: 'Electrojet',
     }),
+    new CopyWebpackPlugin({
+      from: 'public/*',
+      to: commonPaths.appDist
+    })
   ],
 };
