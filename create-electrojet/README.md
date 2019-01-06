@@ -63,7 +63,7 @@ A starter is much more customised and opiniated in it's design. For example, a s
 ## List of plugins
 
 1. [SASS](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/plugins/sass)
-
+2. [LESS](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/plugins/less)
 
 ## How do I customise it to with Bitbucket / Gitlab Templates
 
