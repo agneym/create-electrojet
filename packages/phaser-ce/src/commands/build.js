@@ -1,8 +1,6 @@
 const core = require("@electrojet/core");
 const ora = require("ora");
 
-const configObj = require("../extensions/config");
-
 const {
   getConfig,
 } = require("../extensions/get-config");
@@ -13,9 +11,9 @@ const {
  * @param {Object} cli
  */
 async function build(cli) {
-  const userConfig = await getConfig();
+  const userConfig = await core.getConfig();
 
-  const spinner = ora("Starting to generate build").start();
+  let spinner = ora("Starting to generate build");
   try {
     await core.build({
       plugins: [
@@ -24,6 +22,9 @@ async function build(cli) {
         },
       ],
     });
+
+    spinner.start();  // webpackbar writes to the screen, so cannot start spinner before.
+
     spinner.succeed(`Generated builds successfully`);
   } catch(error) {
     spinner.fail(`Could not generate build :(

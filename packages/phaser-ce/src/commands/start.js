@@ -1,7 +1,6 @@
 const core = require("@electrojet/core");
 
 const configObj = require("../extensions/config");
-const { getConfig } = require("../extensions/get-config");
 
 /**
  * Triggered when start command is run from the CLI
@@ -11,7 +10,7 @@ const { getConfig } = require("../extensions/get-config");
 async function start(cli) {
   const port = cli.flags.port;
 
-  const config = await getConfig();
+  const config = await core.getConfig();
 
   await core.start({
     flags: {
