@@ -8,9 +8,10 @@ const webpackMerge = require('webpack-merge');
  * @returns {object}
  */
 function mergeConfig(env, configs, initial) {
+  const cloneDeep = require("lodash.clonedeep");
   return configs.reduce((acc, configObj) => {
     const { resolve, options } = configObj;
-    return webpackMerge.smart(acc, resolve(env, options));
+    return webpackMerge.smart(acc, resolve(env, cloneDeep(acc), options));
   }, initial);
 }
 
