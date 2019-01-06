@@ -1,10 +1,10 @@
 const core = require("@electrojet/core");
 const ora = require("ora");
 
+const configObj = require("../extensions/config");
+
 const {
-  getPackagerConfig,
   getConfig,
-  createBuildOptions,
 } = require("../extensions/get-config");
 
 /**
@@ -15,22 +15,17 @@ const {
 async function build(cli) {
   const userConfig = await getConfig();
 
-  await core.build({
-    plugins: [
-      {
-        resolve: () => {},
-      },
-    ],
-  });
-
   const spinner = ora("Starting to generate build").start();
-
   try {
-    const userPkgConfig = await getPackagerConfig(userConfig.buildOptions);
-
-    await exec(createBuildOptions(userPkgConfig));
+    await core.build({
+      plugins: [
+        {
+          resolve: () => configObj.webpack,
+        },
+      ],
+    });
     spinner.succeed(`Generated builds successfully`);
-  } catch (error) {
+  } catch(error) {
     spinner.fail(`Could not generate build :(
       ${error}  
     `);

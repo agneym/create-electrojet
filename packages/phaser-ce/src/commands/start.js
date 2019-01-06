@@ -1,9 +1,7 @@
 const core = require("@electrojet/core");
-const spawn = require("cross-spawn");
 
 const configObj = require("../extensions/config");
 const { getConfig } = require("../extensions/get-config");
-const invokeScript = require("../extensions/invoke-script");
 
 /**
  * Triggered when start command is run from the CLI
@@ -24,16 +22,6 @@ async function start(cli) {
         resolve: () => configObj.webpack,
       },
     ],
-  });
-
-  await invokeScript(config, "prestart");
-
-  const dir = process.cwd();
-
-  spawn(`node ${dir} --port=${port}`, {
-    shell: true,
-    stdio: "inherit",
-    stderr: "inherit",
   });
 }
 
