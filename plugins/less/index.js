@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = (env) => env === "dev" ? ({
+module.exports = (env, context, options) => env === "dev" ? ({
   module: {
     rules: [
       {
@@ -8,7 +8,10 @@ module.exports = (env) => env === "dev" ? ({
         use: [
           'style-loader',
           'css-loader',
-          'less-loader'
+          {
+            loader: 'less-loader',
+            options: options,
+          }
         ]
       },
     ]
@@ -21,7 +24,10 @@ module.exports = (env) => env === "dev" ? ({
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'less-loader',
+          {
+            loader: 'less-loader',
+            options: options,
+          },
         ]
       }
     ]
