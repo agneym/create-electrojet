@@ -56,9 +56,9 @@ module.exports = {
       profile: true,
       name: 'Electrojet',
     }),
-    new CopyWebpackPlugin({
+    new CopyWebpackPlugin([{
       from: 'public/*',
       to: commonPaths.appDist
-    })
+    }])
   ],
 };
