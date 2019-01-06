@@ -48,6 +48,15 @@ A template offers a default configuration for a given technology. For eg. select
 
 A starter is much more customised and opiniated in it's design. For example, a starter may have Electron with React and Redux installed and setup for you to start working.
 
+## Why?
+
+:smiley: It can help users get started on their projects without worrying with configuration
+
+:wrench: As a CLI Package author, you only have to manage the package extension, we will take care of the CLI and core.
+
+:rocket: The user might have Electrojet CLI installed globally/cached. Also, they might know their way around, so it's lesser docs.
+
+:point_up: Easier updates when extending the core package
 
 ## How do I add _______ to the configuration?
 
