@@ -1,6 +1,6 @@
 {
   "name": "@electrojet/phaser-ce",
-  "version": "0.0.8",
+  "version": "0.0.1",
   "description": "Build scripts for use with create-electrojet",
   "bin": {
     "electrojet-phaserce": "bin/electrojet-phaserce"
@@ -66,5 +66,6 @@
   },
   "bugs": {
     "url": "https://github.com/BoyWithSilverWings/electrojet-scripts/issues"
-  }
+  },
+  "gitHead": "1bed30cc5350c40e9b4045942f1da0fa7b97deb7"
 }
