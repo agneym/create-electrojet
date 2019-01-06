@@ -1,6 +1,6 @@
 {
   "name": "@electrojet/less",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Use LESS in your electrojet project",
   "main": "index.js",
   "scripts": {

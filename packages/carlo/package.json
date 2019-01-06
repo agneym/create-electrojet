@@ -1,6 +1,6 @@
 {
   "name": "@electrojet/carlo",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Build scripts for use with create-electrojet",
   "bin": {
     "electrojet-carlo": "bin/electrojet-carlo"
@@ -23,7 +23,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@electrojet/core": "^0.0.9",
+    "@electrojet/core": "^0.0.10",
     "chalk": "^2.4.1",
     "cosmiconfig": "^5.0.7",
     "cross-spawn": "^6.0.5",
