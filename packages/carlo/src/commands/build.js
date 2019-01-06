@@ -9,8 +9,8 @@ const {
 } = require("../extensions/get-config");
 
 /**
- * Triggered when start command is run from the CLI
- * Runs webpack dev server and sets carlo on watch
+ * Triggered when build command is run from the CLI
+ * Runs webpack build and generates package with pkg
  * @param {Object} cli
  */
 async function build(cli) {
