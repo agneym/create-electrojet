@@ -2,6 +2,7 @@ const WebpackBar = require('webpackbar');
 
 module.exports = {
   mode: 'development',
+  devtool: 'eval-source-map',
   devServer: {
     contentBase: process.cwd(),
     hot: true,
