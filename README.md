@@ -53,16 +53,16 @@ A starter is much more customised and opiniated in it's design. For example, a s
 
 1. Add a plugin
 
-  There are plugins available for Electrojet that can add functionality to existing configurations. 
-  You can add them to `electrojet.config.js` plugins array.
+    There are plugins available for Electrojet that can add functionality to existing configurations. 
+    You can add them to `electrojet.config.js` plugins array.
 
-  (https://github.com/BoyWithSilverWings/create-electrojet#list-of-plugins)
+    [List of Plugins](https://github.com/BoyWithSilverWings/create-electrojet#list-of-plugins)
 
 2. Roll your own
 
-  If you can't find a plugin, you can always write one. 
+    If you can't find a plugin, you can always write one. 
 
-  In your plugins directory, add a function that takes the format:
+    In your plugins directory, add a function that takes the format:
 
   ```js
   module.exports = {
@@ -80,7 +80,7 @@ A starter is much more customised and opiniated in it's design. For example, a s
   }
   ```
 
-The webpack configuration object that you return from the resolve functions gets [shallow merged](https://github.com/survivejs/webpack-merge#mergesmartconfiguration-configuration) into running configuration. 
+  The webpack configuration object that you return from the resolve functions gets [shallow merged](https://github.com/survivejs/webpack-merge#mergesmartconfiguration-configuration) into running configuration. 
 
 ## List of available templates
 
