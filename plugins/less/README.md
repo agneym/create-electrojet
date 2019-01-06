@@ -26,7 +26,7 @@ module.exports = {
   plugins: [
     {
       resolve: less,
-      options: options,
+      options: optionsToLessPlugin,
     }
   ]
 }
