@@ -86,6 +86,7 @@ A starter is much more customised and opiniated in it's design. For example, a s
 
 1. [Electron](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/electron)
 2. [Carlo](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/carlo)
+3. [Phaser CE](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/phaser-ce)
 
 
 ## List of plugins
