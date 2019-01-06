@@ -25,3 +25,77 @@ Builds using webpack build configuration to the dist folder
 electrojet-scripts build
 ```
 
+## Node API
+
+### 1. Start
+
+Starts the webpack dev server in development mode. 
+
+Returns a promise on completion. Fails loudly on error.
+
+```js
+const core = require("@electrojet-core"); 
+
+// Your function that runs on start command
+async function start() {
+  await core.start({
+    flags: {
+      port: 4567, // Port for developement server
+    },
+    plugins: [
+      {
+        resolve: (env, context, options) => {} // Same as plugins in electrojet.config.js
+      }
+    ]
+  });
+}
+```
+
+### 2. Build
+
+Runs webpack build.
+
+Returns a promise on completion. Fails loudly on error.
+
+```js
+const core = require("@electrojet-core"); 
+
+// Your function that runs on build command
+async function build() {
+  await core.build({
+    plugins: [
+      {
+        resolve: (env, context, options) => {} // Same as plugins in electrojet.config.js
+      }
+    ]
+  });
+}
+```
+
+### 3. `getConfig`
+
+Gets the configuration object defined in `electrojet.config.js` at root.
+
+Returns a Promise with options.
+
+```js
+const { getOptions } = require('@electrojet/core');
+
+async function doSomething() {
+  const options = await getConfig;
+}
+```
+
+## What are the default options?
+
+* [Common Config]()
+
+  These are common for both development and production.
+
+* [Development Config]()
+
+  These are enabled only in development.
+
+* [Production Config]()
+
+  These are enabled only in production.
