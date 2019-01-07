@@ -1,30 +1,20 @@
-const { system, filesystem } = require('gluegun')
-const { resolve } = require('path')
+const { system } = require('gluegun');
+const { resolve } = require('path');
 
-const src = resolve(__dirname, '..')
+const src = resolve(__dirname, '..');
 
 const cli = async cmd =>
-  system.run('node ' + resolve(src, 'bin', 'create-electrojet') + ` ${cmd}`)
+  system.run('node ' + resolve(src, 'bin', 'create-electrojet') + ` ${cmd}`);
 
 test('outputs version', async () => {
-  const output = await cli('--version')
-  expect(output).toContain('0.0.1')
+  const output = await cli('--version');
+  const original = require('../package.json');
+  expect(output).toContain(original.version);
 })
 
 test('outputs help', async () => {
-  const output = await cli('--help')
-  expect(output).toContain('0.0.1')
+  const output = await cli('--help');
+  expect(output).toContain('npm init electrojet');
 })
 
-test('generates file', async () => {
-  const output = await cli('generate foo')
 
-  expect(output).toContain('Generated file at models/foo-model.js')
-  const foomodel = filesystem.read('models/foo-model.js')
-
-  expect(foomodel).toContain(`module.exports = {`)
-  expect(foomodel).toContain(`name: 'foo'`)
-
-  // cleanup artifact
-  filesystem.remove('models')
-})

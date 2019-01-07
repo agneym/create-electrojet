@@ -1,7 +1,7 @@
 {
   "name": "create-electrojet",
   "version": "0.0.20",
-  "description": "Electrojet CLI",
+  "description": "Setup Modern Javascript Applications with a single command",
   "bin": {
     "create-electrojet": "bin/create-electrojet"
   },
@@ -16,6 +16,11 @@
   "files": [
     "bin",
     "src"
+  ],
+  "keywords": [
+    "electrojet-cli",
+    "electrojet",
+    "code-generating-cli"
   ],
   "license": "MIT",
   "dependencies": {
