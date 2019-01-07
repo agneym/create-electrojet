@@ -38,4 +38,9 @@ module.exports = toolbox => {
   }
 
   toolbox.installPackages = installPackages;
+
+  return {
+    determinePackageManager,
+    installPackages,
+  } 
 };
