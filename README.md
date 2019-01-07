@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="logo.svg" alt="logo rocket" height="150">
   <h1>ELECTROJET CLI</h1>
   <a href="https://badge.fury.io/js/create-electrojet"><img src="https://badge.fury.io/js/create-electrojet.svg" alt="npm version" height="18"></a>
   <a href="https://circleci.com/gh/BoyWithSilverWings/create-electrojet">
