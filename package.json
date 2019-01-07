@@ -6,6 +6,9 @@
     "plugins/*"
   ],
   "name": "electrojet-cli",
+  "scripts": {
+    "test": "lerna run test"
+  },
   "devDependencies": {
     "lerna": "^3.8.1"
   }
