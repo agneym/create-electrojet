@@ -72,18 +72,18 @@ module.exports = toolbox => {
    * @param {boolean} npmFlag Boolean flag from user for using npm as package manager
    * @returns {string}
    */
-  function determinePackageManager(npmFlag) {
+  async function determinePackageManager(npmFlag) {
     const npmPath = which("npm");
     const yarnPath = which("yarn");
     if (npmFlag) {
-      if(!checkThatNpmCanReadCwd()) {
+      if(!await checkThatNpmCanReadCwd()) {
         return false;
       }
       return npmPath;
     } else if(yarnPath) {
       return yarnPath;
     } else {
-      if (!checkThatNpmCanReadCwd()) {
+      if (!await checkThatNpmCanReadCwd()) {
         return false;
       }
       return npmPath;
@@ -97,8 +97,8 @@ module.exports = toolbox => {
    * @param {string} props.name name of the repository
    * @param {boolean} props.npm indictor for using npm as package manager
    */
-  function installPackages(root, props) {
-    const packageManager = determinePackageManager(props.npm);
+  async function installPackages(root, props) {
+    const packageManager = await determinePackageManager(props.npm);
 
     info("Starting package installation");
 

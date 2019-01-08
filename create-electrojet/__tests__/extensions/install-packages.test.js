@@ -15,21 +15,21 @@ describe('determine package manager', () => {
     }
   });
 
-  test('returns npm when flag is true', () => {
-    this.which.mockImplementation(mng => mng === 'npm' ? 'npm' : 'yarn');
-    const path = installPackages(this.toolbox).determinePackageManager(true);
+  test('returns npm when flag is true', async () => {
+    this.which.mockImplementation((mng) => mng === 'npm' ? 'npm' : 'yarn');
+    const path = await installPackages(this.toolbox).determinePackageManager(true);
     expect(path).toBe("npm");
   });
 
-  test('returns yarn on a system with yarn path', () => {
+  test('returns yarn on a system with yarn path', async () => {
     this.which.mockImplementation(() => 'yarn');
-    const path = installPackages(this.toolbox).determinePackageManager(false);
+    const path = await installPackages(this.toolbox).determinePackageManager(false);
     expect(path).toBe("yarn");
   });
 
-  test('returns npm on a system with yarn not available', () => {
+  test('returns npm on a system with yarn not available', async () => {
     this.which.mockImplementation(() => 'npm');
-    const path = installPackages(this.toolbox).determinePackageManager(false);
+    const path = await installPackages(this.toolbox).determinePackageManager(false);
     expect(path).toBe("npm");
   });
 });
@@ -52,13 +52,13 @@ describe('install packages', () => {
     }
   });
 
-  test('spawns a process', () => {
-    installPackages(this.toolbox).installPackages(this.prop);
+  test('spawns a process', async () => {
+    installPackages(this.toolbox).installPackages("", this.prop);
     expect(this.spawn.mock.calls.length).toBeGreaterThanOrEqual(1);
   });
 
-  test('tries to install', () => {
-    installPackages(this.toolbox).installPackages(this.prop);
-    expect(this.spawn.mock.calls[0][0]).toContain('install');
+  test('tries to install', async () => {
+    await installPackages(this.toolbox).installPackages("", this.prop);
+    expect(this.spawn.mock.calls[1][0]).toContain('install');
   });
 });
