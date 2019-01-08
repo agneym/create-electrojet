@@ -14,6 +14,7 @@ module.exports = {
       installPackages,
       copyFiles,
       promptFor,
+      createGit,
     } = toolbox;
 
     const {
@@ -43,6 +44,8 @@ module.exports = {
     await copyFiles(props);
 
     await installPackages(props);
+
+    await createGit(props);
 
     success(`Generated project under ${props.name}\n`);
     info(`Next Steps:\n\n  1. cd ${props.name}\n  2. npm start`);
