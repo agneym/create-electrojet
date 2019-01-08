@@ -54,9 +54,15 @@ A starter is much more customised and opiniated in it's design. For example, a s
 
 ## Why?
 
-:smiley: It can help users get started on their projects without worrying with configuration
+As a User:
 
-:wrench: As a CLI Package author, you only have to manage the package extension, we will take care of the CLI and core.
+:smiley: Get started without worrying about configuration
+
+:yum: Learn configuration for one CLI instead of a million ones
+
+As a package owner:
+
+:wrench: You only have to manage the package extension, we will take care of the CLI and core.
 
 :rocket: The user might have Electrojet CLI installed globally/cached. Also, they might know their way around, so it's lesser docs.
 
