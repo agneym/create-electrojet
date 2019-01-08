@@ -1,3 +1,4 @@
+const path = require('path');
 const emoji = require("node-emoji");
 
 const greeting = require("../utils/greeting");
@@ -29,6 +30,8 @@ module.exports = {
       npm,
     };
 
+    const root = path.resolve(props.name);
+
     if (!validate.name(props)) {
       printCommands(toolbox);
       process.exit();
@@ -43,7 +46,7 @@ module.exports = {
 
     await copyFiles(props);
 
-    await installPackages(props);
+    await installPackages(root, props);
 
     await createGit(props);
 
