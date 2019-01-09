@@ -8,9 +8,8 @@ const configObj = require("../extensions/config");
  * @param {object} cli
  */
 async function start(cli) {
+  const env = "dev";
   const port = cli.flags.port;
-
-  const config = await core.getConfig();
 
   await core.start({
     flags: {
@@ -18,7 +17,7 @@ async function start(cli) {
     },
     plugins: [
       {
-        resolve: () => configObj.webpack,
+        resolve: () => configObj.webpack(env),
       },
     ],
   });
