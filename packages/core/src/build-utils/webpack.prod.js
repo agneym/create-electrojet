@@ -3,7 +3,7 @@ const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const commonPaths = require("./common-paths");
 
@@ -27,7 +27,7 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         cache: true,
         parallel: true,
         sourceMap: true,
@@ -43,14 +43,6 @@ module.exports = {
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
       DEBUG: false,
-    }),
-    new UglifyJsPlugin({
-      sourceMap: true,
-      uglifyOptions: {
-        compress: {
-          inline: false,
-        },
-      },
     }),
     new WebpackBar({
       profile: true,
