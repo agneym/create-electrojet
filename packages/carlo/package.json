@@ -68,6 +68,5 @@
   },
   "peerDependencies": {
     "carlo": "^0.9.43"
-  },
-  "gitHead": "20374428aabe7461405a874f0d3b8e9de739c9ee"
+  }
 }
