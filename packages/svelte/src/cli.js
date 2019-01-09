@@ -9,17 +9,17 @@ function run() {
   const cli = meow(
     `
     Usage
-      $ electrojet-phaserce <input>
+      $ electrojet-svelte <input>
     
     Options
       --port, -p Port
  
     Examples
       Start the script in development mode.
-      $ electrojet-phaserce start --port=4567
+      $ electrojet-svelte start --port=4567
 
       Build the app into build targets
-      $ electrojet-phaserce build
+      $ electrojet-svelte build
   `,
     {
       flags: {
