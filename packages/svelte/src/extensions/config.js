@@ -6,10 +6,13 @@ module.exports = {
     devServer: {
       open: true,
     },
+    resolve: {
+      mainFields: ['svelte', 'browser', 'module', 'main']
+    },
     module: {
       rules: [
         {
-          test: /\.html$/,
+          test: /\.(html|svelte)$/,
           exclude: /node_modules/,
           use: {
             loader: 'svelte-loader',
@@ -17,7 +20,7 @@ module.exports = {
               skipIntroByDefault: true,
               nestedTransitions: true,
               emitCss: true,
-              hotReload: env === "prod" ? false : true,
+              hotReload: false,
             }
           }
         },
