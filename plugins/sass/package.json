@@ -1,10 +1,9 @@
 {
   "name": "@electrojet/sass",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Use SCSS/SASS in your electrojet project",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "sass",
     "electrojet"

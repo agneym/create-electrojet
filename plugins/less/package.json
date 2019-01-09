@@ -1,10 +1,9 @@
 {
   "name": "@electrojet/less",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Use LESS in your electrojet project",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "less",
     "electrojet-cli"
