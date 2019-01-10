@@ -7,7 +7,6 @@ module.exports = {
     contentBase: process.cwd(),
     hot: true,
     historyApiFallback: true,
-    clientLogLevel: 'none',
   },
   module: {
     rules: [
@@ -23,7 +22,7 @@ module.exports = {
         ],
       },
       {
-        test: /.jsx?$/,
+        test: /\.jsx?$/,
         use: {
           loader: 'babel-loader',
         },
@@ -31,5 +30,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [new WebpackBar()],
+  plugins: [new WebpackBar({
+    name: 'Electrojet',
+  })],
 };

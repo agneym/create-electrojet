@@ -15,6 +15,7 @@ module.exports = {
     rules: [
       {
         test: /\.(jpe?g|png|gif|svg|eot|ttf|woff|woff2)$/i,
+        exclude: /\.(ejs)$/i,
         use: [
           {
             loader: 'file-loader',
