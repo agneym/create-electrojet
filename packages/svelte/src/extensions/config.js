@@ -5,7 +5,7 @@ module.exports = {
   default: {
     plugins: [],
   },
-  webpack: (env) => ({
+  webpack: (env, context) => [{
     devServer: {
       open: true,
     },
@@ -23,17 +23,19 @@ module.exports = {
               skipIntroByDefault: true,
               nestedTransitions: true,
               emitCss: true,
-              hotReload: false,
+              hotReload: env === "dev",
             }
           }
         },
       ]
     },
     plugins: [
+      ...context.plugins.slice(1),
       new HtmlWebpackPlugin({
         template: path.resolve(process.cwd(), 'src/index.ejs'), // This wouldn't work on a normal HTML file
-        inject: true,
       }),
     ]
-  }),
+  }, {
+    plugins: 'replace',
+  }],
 };

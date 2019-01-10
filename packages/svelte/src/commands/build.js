@@ -9,14 +9,12 @@ const configObj = require("../extensions/config");
  * @param {Object} cli
  */
 async function build(cli) {
-  const env = "prod";
-
   let spinner = ora("Starting to generate build");
   try {
     await core.build({
       plugins: [
         {
-          resolve: () => configObj.webpack(env),
+          resolve: (env, context, options) => configObj.webpack(env, context, options),
         },
       ],
     });
