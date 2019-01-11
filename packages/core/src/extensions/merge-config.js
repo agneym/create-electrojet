@@ -28,7 +28,7 @@ function mergeConfig(env, configs, initial) {
   return configs.reduce((acc, configObj) => {
 
     const { resolve, options } = configObj;
-    const result = resolve(env, cloneDeep(acc), options);
+    const result = resolve(env, cloneDeep(acc), options) || [];
     
     return webpackMerge.smartStrategy(
       getStrategy(result)
