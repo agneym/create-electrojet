@@ -122,6 +122,21 @@ As a package owner:
 
 See any of the [packages](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages) for an example.
 
+## Developing
+
+1. Clone the repository
+2. Run following command to install all dependencies
+
+```bash
+lerna bootstrap
+```
+3. Make changes in your branch
+4. Run tests with:
+```
+lerna run test 
+```
+5. Give us a PR
+
 ## How do I customise it to with Bitbucket / Gitlab Templates
 
 > Docs in progress
