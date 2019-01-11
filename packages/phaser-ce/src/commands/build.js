@@ -1,10 +1,6 @@
 const core = require("@electrojet/core");
 const ora = require("ora");
 
-const {
-  getConfig,
-} = require("../extensions/get-config");
-
 /**
  * Triggered when build command is run from the CLI
  * Runs webpack to generate build
