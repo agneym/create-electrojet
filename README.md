@@ -106,6 +106,7 @@ As a package owner:
 1. [Electron](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/electron)
 2. [Carlo](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/carlo)
 3. [Phaser CE](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/phaser-ce)
+3. [Svelte](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/svelte)
 
 
 ## List of plugins
