@@ -2,7 +2,7 @@ const core = require("@electrojet/core");
 const spawn = require("cross-spawn");
 const path = require("path");
 
-const { webpackConfig } = require("../extensions/default-config");
+const defaultConfig = require("../extensions/default-config");
 const { getConfig } = require("../extensions/get-config");
 const invokeScript = require("../extensions/invoke-script");
 
@@ -22,7 +22,7 @@ async function start(cli) {
     },
     plugins: [
       {
-        resolve: () => webpackConfig,
+        resolve: defaultConfig.webpack,
       },
     ],
   });

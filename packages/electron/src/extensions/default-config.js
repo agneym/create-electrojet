@@ -1,8 +1,7 @@
 module.exports = {
   plugins: [],
   buildOptions: {},
-};
-
-exports.webpackConfig = {
-  target: "electron-renderer",
+  webpack: () => ({
+    target: "electron-renderer",
+  })
 };
