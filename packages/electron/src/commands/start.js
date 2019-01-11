@@ -3,7 +3,6 @@ const spawn = require("cross-spawn");
 const path = require("path");
 
 const defaultConfig = require("../extensions/default-config");
-const { getConfig } = require("../extensions/get-config");
 const invokeScript = require("../extensions/invoke-script");
 
 /**
@@ -14,7 +13,7 @@ const invokeScript = require("../extensions/invoke-script");
 async function start(cli) {
   const port = cli.flags.port;
 
-  const config = await getConfig();
+  const config = await core.getConfig();
 
   await core.start({
     flags: {

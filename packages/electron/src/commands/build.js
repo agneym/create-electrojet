@@ -3,7 +3,7 @@ const core = require("@electrojet/core");
 const ora = require("ora");
 const rebuild = require("electron-rebuild");
 
-const { getPackagerConfig, getConfig } = require("../extensions/get-config");
+const { getPackagerConfig } = require("../extensions/get-config");
 const { webpackConfig } = require("../extensions/default-config");
 
 /**
@@ -12,7 +12,7 @@ const { webpackConfig } = require("../extensions/default-config");
  * @param {Object} cli
  */
 async function build(cli) {
-  const userConfig = await getConfig();
+  const userConfig = await core.getConfig();
 
   await core.build({
     plugins: [
