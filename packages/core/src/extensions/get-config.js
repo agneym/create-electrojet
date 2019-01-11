@@ -1,3 +1,6 @@
+const { exists } = require("fs-jetpack");
+const path = require("path");
+
 const mergeConfig = require('./merge-config');
 
 module.exports = {
@@ -28,14 +31,18 @@ module.exports = {
    * Returns the required webpack configuration merging user and provided configs
    * @param {string} env - Current running environment
    * @param {Object} renderConfig - configuration object setup by the user
-   * @param {Object} userConfig - configuration object setup by the user
+   * @param {Object} pluginConfig - configuration object setup by the user
    * @returns {Object}
    */
-  getWebpackConfig: function(env, renderConfig = [], userConfig = []) {
+  getWebpackConfig: function(env, renderConfig = [], pluginConfig = []) {
+    const userConfig = path.resolve(process.cwd(), 'webpack.config.js');
+    if(exists(userConfig)) {
+      return require(userConfig);
+    }
     const ownConfig = require('../webpack.config.js')({
       env,
     });
 
-    return mergeConfig(env, [...renderConfig, ...userConfig], ownConfig);
+    return mergeConfig(env, [...renderConfig, ...pluginConfig], ownConfig);
   },
 };
