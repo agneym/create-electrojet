@@ -11,7 +11,7 @@
 Starts a development server using webpack. 
 
 ```
-electrojet-scripts start --port=4567
+core-scripts start --port=4567
 ```
 
 Port is defaulted to 4567.
@@ -21,7 +21,7 @@ Port is defaulted to 4567.
 Builds using webpack build configuration to the dist folder
 
 ```
-electrojet-scripts build
+core-scripts build
 ```
 
 ## Node API
