@@ -54,7 +54,7 @@ A starter is much more customised and opiniated in it's design. For example, a s
 
 ## Why?
 
-See [announcement blog](https://medium.com/@agney/electrojet-cli-as-a-service-c11889246724). 
+See [announcement blog](https://blog.agney.in/electrojet-cli-as-a-service/). 
 
 As a User:
 
