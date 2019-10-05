@@ -19,7 +19,6 @@ async function start(options = {}) {
   const config = await getConfig();
 
   const webpackConfig = getWebpackConfig(env, options.plugins, config.plugins);
-  console.log(webpackConfig);
   const compiler = webpack(webpackConfig);
 
   const server = new WebpackDevServer(compiler, Object.assign(webpackConfig.devServer, { port }));

@@ -8,9 +8,6 @@ module.exports = {
     filename: 'bundle.js',
     path: commonPaths.appDist,
   },
-  resolve: {
-    extensions: ['.js'],
-  },
   module: {
     rules: [
       {
