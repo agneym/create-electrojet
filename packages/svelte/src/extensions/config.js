@@ -12,6 +12,7 @@ module.exports = {
       },
       resolve: {
         mainFields: ["svelte", "browser", "module", "main"],
+        extensions: ["mjs", "svelte", "js"],
       },
       module: {
         rules: [
