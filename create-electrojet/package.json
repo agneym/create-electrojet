@@ -1,6 +1,6 @@
 {
   "name": "create-electrojet",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Setup Modern Javascript Applications with a single command",
   "bin": {
     "create-electrojet": "bin/create-electrojet"
