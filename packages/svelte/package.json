@@ -1,6 +1,6 @@
 {
   "name": "@electrojet/svelte",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Build scripts for use with create-electrojet",
   "bin": {
     "electrojet-svelte": "bin/electrojet-svelte"
