@@ -37,7 +37,8 @@
     "jest": "^23.6.0",
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2",
-    "standard": "^14.3.1"
+    "standard": "^14.3.1",
+    "svelte-loader": "^2.13.6"
   },
   "jest": {
     "testEnvironment": "node"
