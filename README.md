@@ -32,7 +32,7 @@ This option allows you to select the template beforehand.
 npm init electrojet <project-name> --template=electron
 ```
 
-[See list of currently available templates](https://github.com/BoyWithSilverWings/create-electrojet#list-of-available-templates)
+[See list of currently available templates](https://github.com/agneym/create-electrojet#list-of-available-templates)
 
 #### 2. Starter
 
@@ -44,7 +44,7 @@ npm init electrojet <project-name> --starter=<User>/<RepoName>
 
 This format works for repositories hosted on github. 
 
-[How do I customise it to work with Gitlab /  Bitbucket?](https://github.com/BoyWithSilverWings/create-electrojet#)
+[How do I customise it to work with Gitlab /  Bitbucket?](https://github.com/agneym/create-electrojet#)
 
 #### How are they different?
 
@@ -77,7 +77,7 @@ As a package owner:
     There are plugins available for Electrojet that can add functionality to existing configurations. 
     You can add them to `electrojet.config.js` plugins array.
 
-    [List of Plugins](https://github.com/BoyWithSilverWings/create-electrojet#list-of-plugins)
+    [List of Plugins](https://github.com/agneym/create-electrojet#list-of-plugins)
 
 2. Roll your own
 
@@ -105,24 +105,24 @@ As a package owner:
 
 ## List of available templates
 
-1. [Electron](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/electron)
-2. [Carlo](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/carlo)
-3. [Phaser CE](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/phaser-ce)
-3. [Svelte](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/svelte)
+1. [Electron](https://github.com/agneym/create-electrojet/tree/master/packages/electron)
+2. [Carlo](https://github.com/agneym/create-electrojet/tree/master/packages/carlo)
+3. [Phaser CE](https://github.com/agneym/create-electrojet/tree/master/packages/phaser-ce)
+3. [Svelte](https://github.com/agneym/create-electrojet/tree/master/packages/svelte)
 
 
 ## List of plugins
 
-1. [SASS](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/plugins/sass)
-2. [LESS](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/plugins/less)
+1. [SASS](https://github.com/agneym/create-electrojet/tree/master/plugins/sass)
+2. [LESS](https://github.com/agneym/create-electrojet/tree/master/plugins/less)
 
 ## How do I build a CLI for my favorite technology?
 
 1. Install `@electrojet/core` for defaults in building Webpages. 
-2. Use [Node APIs](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages/core#node-api) for `@electrojet/core` to extend the start and build scripts.
-3. If you are building a Template (and not a starter, [see difference](https://github.com/BoyWithSilverWings/create-electrojet#how-are-they-different)), give us a PR to include in electrojet templates.
+2. Use [Node APIs](https://github.com/agneym/create-electrojet/tree/master/packages/core#node-api) for `@electrojet/core` to extend the start and build scripts.
+3. If you are building a Template (and not a starter, [see difference](https://github.com/agneym/create-electrojet#how-are-they-different)), give us a PR to include in electrojet templates.
 
-See any of the [packages](https://github.com/BoyWithSilverWings/create-electrojet/tree/master/packages) for an example.
+See any of the [packages](https://github.com/agneym/create-electrojet/tree/master/packages) for an example.
 
 ## Developing
 

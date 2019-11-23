@@ -62,10 +62,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BoyWithSilverWings/electrojet-scripts"
+    "url": "https://github.com/agneym/electrojet-scripts"
   },
   "bugs": {
-    "url": "https://github.com/BoyWithSilverWings/electrojet-scripts/issues"
+    "url": "https://github.com/agneym/electrojet-scripts/issues"
   },
   "peerDependencies": {
     "electron": "^4.0.0"
