@@ -2,8 +2,8 @@
   <img src="logo.svg" alt="logo rocket" height="150">
   <h1>ELECTROJET CLI</h1>
   <a href="https://badge.fury.io/js/create-electrojet"><img src="https://badge.fury.io/js/create-electrojet.svg" alt="npm version" height="18"></a>
-  <a href="https://circleci.com/gh/BoyWithSilverWings/create-electrojet">
-    <img src="https://circleci.com/gh/BoyWithSilverWings/create-electrojet/tree/master.svg?style=svg" />
+  <a href="https://circleci.com/gh/agneym/create-electrojet">
+    <img src="https://circleci.com/gh/agneym/create-electrojet/tree/master.svg?style=svg" />
   </a>
   <a href="#badge">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
